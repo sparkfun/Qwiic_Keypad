@@ -1,0 +1,3123 @@
+
+C:\Users\ANDREA~1.DEV\AppData\Local\Temp\arduino_build_221424/Qwiic_KeyPad.ino.elf:     file format elf32-avr
+
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+__vectors():
+   0:	2c c0       	rjmp	.+88     	; 0x5a <__ctors_end>
+   2:	50 c0       	rjmp	.+160    	; 0xa4 <__bad_interrupt>
+   4:	4f c0       	rjmp	.+158    	; 0xa4 <__bad_interrupt>
+   6:	4e c0       	rjmp	.+156    	; 0xa4 <__bad_interrupt>
+   8:	4d c0       	rjmp	.+154    	; 0xa4 <__bad_interrupt>
+   a:	4c c0       	rjmp	.+152    	; 0xa4 <__bad_interrupt>
+   c:	4b c0       	rjmp	.+150    	; 0xa4 <__bad_interrupt>
+   e:	4a c0       	rjmp	.+148    	; 0xa4 <__bad_interrupt>
+  10:	49 c0       	rjmp	.+146    	; 0xa4 <__bad_interrupt>
+  12:	48 c0       	rjmp	.+144    	; 0xa4 <__bad_interrupt>
+  14:	47 c0       	rjmp	.+142    	; 0xa4 <__bad_interrupt>
+  16:	63 c6       	rjmp	.+3270   	; 0xcde <__vector_11>
+  18:	45 c0       	rjmp	.+138    	; 0xa4 <__bad_interrupt>
+  1a:	44 c0       	rjmp	.+136    	; 0xa4 <__bad_interrupt>
+  1c:	43 c0       	rjmp	.+134    	; 0xa4 <__bad_interrupt>
+  1e:	12 c2       	rjmp	.+1060   	; 0x444 <__vector_15>
+  20:	59 c2       	rjmp	.+1202   	; 0x4d4 <__vector_16>
+
+00000022 <__trampolines_end>:
+__trampolines_start():
+  22:	00 00       	nop
+  24:	00 00       	nop
+  26:	00 04       	cpc	r0, r0
+  28:	03 02       	muls	r16, r19
+  2a:	01 00       	.word	0x0001	; ????
+	...
+
+0000002e <digital_pin_to_bit_mask_PGM>:
+  2e:	01 02 04 08 10 20 40 80 04 02 01 08                 ..... @.....
+
+0000003a <digital_pin_to_port_PGM>:
+  3a:	01 01 01 01 01 01 01 01 02 02 02 02                 ............
+
+00000046 <port_to_input_PGM>:
+  46:	00 00 39 00 36 00                                   ..9.6.
+
+0000004c <port_to_output_PGM>:
+  4c:	00 00 3b 00 38 00                                   ..;.8.
+
+00000052 <port_to_mode_PGM>:
+  52:	00 00 3a 00 37 00                                   ..:.7.
+
+00000058 <__ctors_start>:
+__ctors_start():
+  58:	56 01       	movw	r10, r12
+
+0000005a <__ctors_end>:
+__dtors_end():
+  5a:	11 24       	eor	r1, r1
+  5c:	1f be       	out	0x3f, r1	; 63
+  5e:	cf e5       	ldi	r28, 0x5F	; 95
+  60:	d2 e0       	ldi	r29, 0x02	; 2
+  62:	de bf       	out	0x3e, r29	; 62
+  64:	cd bf       	out	0x3d, r28	; 61
+
+00000066 <__do_copy_data>:
+__do_copy_data():
+  66:	10 e0       	ldi	r17, 0x00	; 0
+  68:	a0 e6       	ldi	r26, 0x60	; 96
+  6a:	b0 e0       	ldi	r27, 0x00	; 0
+  6c:	e6 ea       	ldi	r30, 0xA6	; 166
+  6e:	ff e0       	ldi	r31, 0x0F	; 15
+  70:	02 c0       	rjmp	.+4      	; 0x76 <__do_copy_data+0x10>
+  72:	05 90       	lpm	r0, Z+
+  74:	0d 92       	st	X+, r0
+  76:	a2 38       	cpi	r26, 0x82	; 130
+  78:	b1 07       	cpc	r27, r17
+  7a:	d9 f7       	brne	.-10     	; 0x72 <__do_copy_data+0xc>
+
+0000007c <__do_clear_bss>:
+__do_clear_bss():
+  7c:	21 e0       	ldi	r18, 0x01	; 1
+  7e:	a2 e8       	ldi	r26, 0x82	; 130
+  80:	b0 e0       	ldi	r27, 0x00	; 0
+  82:	01 c0       	rjmp	.+2      	; 0x86 <.do_clear_bss_start>
+
+00000084 <.do_clear_bss_loop>:
+  84:	1d 92       	st	X+, r1
+
+00000086 <.do_clear_bss_start>:
+  86:	a8 37       	cpi	r26, 0x78	; 120
+  88:	b2 07       	cpc	r27, r18
+  8a:	e1 f7       	brne	.-8      	; 0x84 <.do_clear_bss_loop>
+
+0000008c <__do_global_ctors>:
+__do_global_ctors():
+  8c:	10 e0       	ldi	r17, 0x00	; 0
+  8e:	cd e2       	ldi	r28, 0x2D	; 45
+  90:	d0 e0       	ldi	r29, 0x00	; 0
+  92:	03 c0       	rjmp	.+6      	; 0x9a <__do_global_ctors+0xe>
+  94:	21 97       	sbiw	r28, 0x01	; 1
+  96:	fe 01       	movw	r30, r28
+  98:	68 d7       	rcall	.+3792   	; 0xf6a <__tablejump2__>
+  9a:	cc 32       	cpi	r28, 0x2C	; 44
+  9c:	d1 07       	cpc	r29, r17
+  9e:	d1 f7       	brne	.-12     	; 0x94 <__do_global_ctors+0x8>
+  a0:	4d d7       	rcall	.+3738   	; 0xf3c <main>
+  a2:	7f c7       	rjmp	.+3838   	; 0xfa2 <_exit>
+
+000000a4 <__bad_interrupt>:
+__vector_1():
+  a4:	ad cf       	rjmp	.-166    	; 0x0 <__vectors>
+
+000000a6 <loop>:
+loop():
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:102
+
+  startI2C(); //Determine the I2C address we should be using and begin listening on I2C bus
+}
+
+void loop(void)
+{
+  a6:	0f 93       	push	r16
+  a8:	1f 93       	push	r17
+  aa:	cf 93       	push	r28
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:104
+  //Check for new key presses
+  char key = keypad.getKey();
+  ac:	82 e8       	ldi	r24, 0x82	; 130
+  ae:	90 e0       	ldi	r25, 0x00	; 0
+  b0:	e3 d5       	rcall	.+3014   	; 0xc78 <Keypad::getKey()>
+  b2:	28 2f       	mov	r18, r24
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:105
+  if (key) {
+  b4:	88 23       	and	r24, r24
+  b6:	29 f1       	breq	.+74     	; 0x102 <loop+0x5c>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:106
+    buttonEvents[newestPress].button = key;
+  b8:	80 91 f2 00 	lds	r24, 0x00F2	; 0x8000f2 <newestPress>
+  bc:	90 e0       	ldi	r25, 0x00	; 0
+  be:	65 e0       	ldi	r22, 0x05	; 5
+  c0:	70 e0       	ldi	r23, 0x00	; 0
+  c2:	42 d7       	rcall	.+3716   	; 0xf48 <__mulhi3>
+  c4:	8d 50       	subi	r24, 0x0D	; 13
+  c6:	9f 4f       	sbci	r25, 0xFF	; 255
+  c8:	fc 01       	movw	r30, r24
+  ca:	20 83       	st	Z, r18
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:107
+    buttonEvents[newestPress].buttonTime = millis();
+  cc:	c0 91 f2 00 	lds	r28, 0x00F2	; 0x8000f2 <newestPress>
+  d0:	50 d6       	rcall	.+3232   	; 0xd72 <millis>
+  d2:	8b 01       	movw	r16, r22
+  d4:	9c 01       	movw	r18, r24
+  d6:	8c 2f       	mov	r24, r28
+  d8:	90 e0       	ldi	r25, 0x00	; 0
+  da:	65 e0       	ldi	r22, 0x05	; 5
+  dc:	70 e0       	ldi	r23, 0x00	; 0
+  de:	34 d7       	rcall	.+3688   	; 0xf48 <__mulhi3>
+  e0:	8d 50       	subi	r24, 0x0D	; 13
+  e2:	9f 4f       	sbci	r25, 0xFF	; 255
+  e4:	fc 01       	movw	r30, r24
+  e6:	01 83       	std	Z+1, r16	; 0x01
+  e8:	12 83       	std	Z+2, r17	; 0x02
+  ea:	23 83       	std	Z+3, r18	; 0x03
+  ec:	34 83       	std	Z+4, r19	; 0x04
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:108
+    if (newestPress++ == BUTTON_STACK_SIZE) newestPress = 0; //Wrap variable
+  ee:	80 91 f2 00 	lds	r24, 0x00F2	; 0x8000f2 <newestPress>
+  f2:	91 e0       	ldi	r25, 0x01	; 1
+  f4:	98 0f       	add	r25, r24
+  f6:	90 93 f2 00 	sts	0x00F2, r25	; 0x8000f2 <newestPress>
+  fa:	8f 30       	cpi	r24, 0x0F	; 15
+  fc:	11 f4       	brne	.+4      	; 0x102 <loop+0x5c>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:108 (discriminator 1)
+  fe:	10 92 f2 00 	sts	0x00F2, r1	; 0x8000f2 <newestPress>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:112
+  }
+
+  //Set interrupt pin as needed
+  if(newestPress != oldestPress)
+ 102:	90 91 f2 00 	lds	r25, 0x00F2	; 0x8000f2 <newestPress>
+ 106:	80 91 f1 00 	lds	r24, 0x00F1	; 0x8000f1 <oldestPress>
+ 10a:	98 17       	cp	r25, r24
+ 10c:	11 f0       	breq	.+4      	; 0x112 <loop+0x6c>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:113
+    digitalWrite(interruptPin, LOW); //We have events on the stack!
+ 10e:	60 e0       	ldi	r22, 0x00	; 0
+ 110:	01 c0       	rjmp	.+2      	; 0x114 <loop+0x6e>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:115
+  else
+    digitalWrite(interruptPin, HIGH); //No button events to report
+ 112:	61 e0       	ldi	r22, 0x01	; 1
+ 114:	87 e0       	ldi	r24, 0x07	; 7
+ 116:	ae d6       	rcall	.+3420   	; 0xe74 <digitalWrite>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:117
+
+  sleep_mode(); //Stop everything and go to sleep. Wake up if I2C event occurs.
+ 118:	85 b7       	in	r24, 0x35	; 53
+ 11a:	80 62       	ori	r24, 0x20	; 32
+ 11c:	85 bf       	out	0x35, r24	; 53
+ 11e:	88 95       	sleep
+ 120:	85 b7       	in	r24, 0x35	; 53
+ 122:	8f 7d       	andi	r24, 0xDF	; 223
+ 124:	85 bf       	out	0x35, r24	; 53
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:118
+}
+ 126:	cf 91       	pop	r28
+ 128:	1f 91       	pop	r17
+ 12a:	0f 91       	pop	r16
+ 12c:	08 95       	ret
+
+0000012e <loadNextPressToArray()>:
+_Z20loadNextPressToArrayv():
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:163
+    Wire.write(responseBuffer[x]);
+}
+
+//Take the FIFO button press off the stack and load it into the transmit array
+void loadNextPressToArray()
+{
+ 12e:	0f 93       	push	r16
+ 130:	1f 93       	push	r17
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:164
+  if (oldestPress != newestPress)
+ 132:	90 91 f1 00 	lds	r25, 0x00F1	; 0x8000f1 <oldestPress>
+ 136:	80 91 f2 00 	lds	r24, 0x00F2	; 0x8000f2 <newestPress>
+ 13a:	98 17       	cp	r25, r24
+ 13c:	99 f1       	breq	.+102    	; 0x1a4 <loadNextPressToArray()+0x76>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:166
+  {
+    responseBuffer[0] = buttonEvents[oldestPress].button;
+ 13e:	80 91 f1 00 	lds	r24, 0x00F1	; 0x8000f1 <oldestPress>
+ 142:	90 e0       	ldi	r25, 0x00	; 0
+ 144:	65 e0       	ldi	r22, 0x05	; 5
+ 146:	70 e0       	ldi	r23, 0x00	; 0
+ 148:	ff d6       	rcall	.+3582   	; 0xf48 <__mulhi3>
+ 14a:	8d 50       	subi	r24, 0x0D	; 13
+ 14c:	9f 4f       	sbci	r25, 0xFF	; 255
+ 14e:	fc 01       	movw	r30, r24
+ 150:	80 81       	ld	r24, Z
+ 152:	80 93 3e 01 	sts	0x013E, r24	; 0x80013e <responseBuffer>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:168
+
+    unsigned long timeSincePressed = millis() - buttonEvents[oldestPress].buttonTime;
+ 156:	0d d6       	rcall	.+3098   	; 0xd72 <millis>
+ 158:	8b 01       	movw	r16, r22
+ 15a:	9c 01       	movw	r18, r24
+ 15c:	80 91 f1 00 	lds	r24, 0x00F1	; 0x8000f1 <oldestPress>
+ 160:	90 e0       	ldi	r25, 0x00	; 0
+ 162:	65 e0       	ldi	r22, 0x05	; 5
+ 164:	70 e0       	ldi	r23, 0x00	; 0
+ 166:	f0 d6       	rcall	.+3552   	; 0xf48 <__mulhi3>
+ 168:	8d 50       	subi	r24, 0x0D	; 13
+ 16a:	9f 4f       	sbci	r25, 0xFF	; 255
+ 16c:	fc 01       	movw	r30, r24
+ 16e:	81 81       	ldd	r24, Z+1	; 0x01
+ 170:	92 81       	ldd	r25, Z+2	; 0x02
+ 172:	a3 81       	ldd	r26, Z+3	; 0x03
+ 174:	b4 81       	ldd	r27, Z+4	; 0x04
+ 176:	b9 01       	movw	r22, r18
+ 178:	a8 01       	movw	r20, r16
+ 17a:	48 1b       	sub	r20, r24
+ 17c:	59 0b       	sbc	r21, r25
+ 17e:	6a 0b       	sbc	r22, r26
+ 180:	7b 0b       	sbc	r23, r27
+ 182:	db 01       	movw	r26, r22
+ 184:	ca 01       	movw	r24, r20
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:170
+
+    responseBuffer[1] = timeSincePressed >> 8; //MSB
+ 186:	90 93 3f 01 	sts	0x013F, r25	; 0x80013f <responseBuffer+0x1>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:171
+    responseBuffer[2] = timeSincePressed; //LSB
+ 18a:	40 93 40 01 	sts	0x0140, r20	; 0x800140 <responseBuffer+0x2>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:172
+    if (oldestPress++ == BUTTON_STACK_SIZE) oldestPress = 0;
+ 18e:	80 91 f1 00 	lds	r24, 0x00F1	; 0x8000f1 <oldestPress>
+ 192:	91 e0       	ldi	r25, 0x01	; 1
+ 194:	98 0f       	add	r25, r24
+ 196:	90 93 f1 00 	sts	0x00F1, r25	; 0x8000f1 <oldestPress>
+ 19a:	8f 30       	cpi	r24, 0x0F	; 15
+ 19c:	49 f4       	brne	.+18     	; 0x1b0 <loadNextPressToArray()+0x82>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:172 (discriminator 1)
+ 19e:	10 92 f1 00 	sts	0x00F1, r1	; 0x8000f1 <oldestPress>
+ 1a2:	06 c0       	rjmp	.+12     	; 0x1b0 <loadNextPressToArray()+0x82>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:177
+  }
+  else
+  {
+    //No new button presses. Respond with a blank record
+    responseBuffer[0] = 0; //No button pressed
+ 1a4:	10 92 3e 01 	sts	0x013E, r1	; 0x80013e <responseBuffer>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:178
+    responseBuffer[1] = 0;
+ 1a8:	10 92 3f 01 	sts	0x013F, r1	; 0x80013f <responseBuffer+0x1>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:179
+    responseBuffer[2] = 0;
+ 1ac:	10 92 40 01 	sts	0x0140, r1	; 0x800140 <responseBuffer+0x2>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:182
+  }
+
+  responseSize = 3;
+ 1b0:	83 e0       	ldi	r24, 0x03	; 3
+ 1b2:	80 93 73 00 	sts	0x0073, r24	; 0x800073 <responseSize>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:183
+}
+ 1b6:	1f 91       	pop	r17
+ 1b8:	0f 91       	pop	r16
+ 1ba:	08 95       	ret
+
+000001bc <requestEvent()>:
+_Z12requestEventv():
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:153
+//Send back a number of bytes via an array, max 32 bytes
+//When KeyPad gets a request for data from the user, this function is called as an interrupt
+//The interrupt will respond with different types of data depending on what response state we are in
+//The user sets the response type based on bytes sent to KeyPad
+void requestEvent()
+{
+ 1bc:	cf 93       	push	r28
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:154
+  loadNextPressToArray();
+ 1be:	b7 df       	rcall	.-146    	; 0x12e <loadNextPressToArray()>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:157
+
+  //Send response buffer
+  for (byte x = 0 ; x < responseSize ; x++)
+ 1c0:	c0 e0       	ldi	r28, 0x00	; 0
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:157 (discriminator 1)
+ 1c2:	80 91 73 00 	lds	r24, 0x0073	; 0x800073 <responseSize>
+ 1c6:	c8 17       	cp	r28, r24
+ 1c8:	50 f4       	brcc	.+20     	; 0x1de <requestEvent()+0x22>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:158 (discriminator 3)
+    Wire.write(responseBuffer[x]);
+ 1ca:	ec 2f       	mov	r30, r28
+ 1cc:	f0 e0       	ldi	r31, 0x00	; 0
+ 1ce:	e2 5c       	subi	r30, 0xC2	; 194
+ 1d0:	fe 4f       	sbci	r31, 0xFE	; 254
+ 1d2:	60 81       	ld	r22, Z
+ 1d4:	81 e4       	ldi	r24, 0x41	; 65
+ 1d6:	91 e0       	ldi	r25, 0x01	; 1
+ 1d8:	7f d0       	rcall	.+254    	; 0x2d8 <TwoWire::write(unsigned char)>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:157 (discriminator 3)
+void requestEvent()
+{
+  loadNextPressToArray();
+
+  //Send response buffer
+  for (byte x = 0 ; x < responseSize ; x++)
+ 1da:	cf 5f       	subi	r28, 0xFF	; 255
+ 1dc:	f2 cf       	rjmp	.-28     	; 0x1c2 <requestEvent()+0x6>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:159
+    Wire.write(responseBuffer[x]);
+}
+ 1de:	cf 91       	pop	r28
+ 1e0:	08 95       	ret
+
+000001e2 <readSystemSettings()>:
+_ZNK5EERefdeEv():
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\EEPROM/EEPROM.h:42
+
+    EERef( const int index )
+        : index( index )                 {}
+    
+    //Access/read members.
+    uint8_t operator*() const            { return eeprom_read_byte( (uint8_t*) index ); }
+ 1e2:	81 e0       	ldi	r24, 0x01	; 1
+ 1e4:	90 e0       	ldi	r25, 0x00	; 0
+ 1e6:	c7 d6       	rcall	.+3470   	; 0xf76 <eeprom_read_byte>
+_Z18readSystemSettingsv():
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:190
+//Reads the current system settings from EEPROM
+//If anything looks weird, reset setting to default value
+void readSystemSettings(void)
+{
+  //Read what I2C address we should use
+  setting_i2c_address = EEPROM.read(LOCATION_I2C_ADDRESS);
+ 1e8:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <setting_i2c_address>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:191
+  if (setting_i2c_address == 255)
+ 1ec:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <setting_i2c_address>
+ 1f0:	8f 3f       	cpi	r24, 0xFF	; 255
+ 1f2:	41 f4       	brne	.+16     	; 0x204 <readSystemSettings()+0x22>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:193
+  {
+    setting_i2c_address = I2C_ADDRESS_DEFAULT; //By default, we listen for I2C_ADDRESS_DEFAULT
+ 1f4:	8b e4       	ldi	r24, 0x4B	; 75
+ 1f6:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <setting_i2c_address>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:194
+    EEPROM.write(LOCATION_I2C_ADDRESS, setting_i2c_address);
+ 1fa:	60 91 74 00 	lds	r22, 0x0074	; 0x800074 <setting_i2c_address>
+_ZN5EERefaSEh():
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\EEPROM/EEPROM.h:47
+    operator uint8_t() const       { return **this; }
+    
+    //Assignment/write members.
+    EERef &operator=( const EERef &ref ) { return *this = *ref; }
+    EERef &operator=( uint8_t in )       { return eeprom_write_byte( (uint8_t*) index, in ), *this;  }
+ 1fe:	81 e0       	ldi	r24, 0x01	; 1
+ 200:	90 e0       	ldi	r25, 0x00	; 0
+ 202:	c1 c6       	rjmp	.+3458   	; 0xf86 <eeprom_write_byte>
+ 204:	08 95       	ret
+
+00000206 <startI2C()>:
+_Z8startI2Cv():
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:201
+}
+
+//Begin listening on I2C bus as I2C slave using the global variable setting_i2c_address
+void startI2C()
+{
+  Wire.end(); //Before we can change addresses we need to stop
+ 206:	81 e4       	ldi	r24, 0x41	; 65
+ 208:	91 e0       	ldi	r25, 0x01	; 1
+ 20a:	65 d0       	rcall	.+202    	; 0x2d6 <TwoWire::end()>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:203
+  
+  if (digitalRead(addr) == HIGH) //Default is HIGH, the jumper is open
+ 20c:	89 e0       	ldi	r24, 0x09	; 9
+ 20e:	6c d6       	rcall	.+3288   	; 0xee8 <digitalRead>
+ 210:	01 97       	sbiw	r24, 0x01	; 1
+ 212:	31 f4       	brne	.+12     	; 0x220 <startI2C()+0x1a>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:204
+    Wire.begin(setting_i2c_address); //Start I2C and answer calls using address from EEPROM
+ 214:	60 91 74 00 	lds	r22, 0x0074	; 0x800074 <setting_i2c_address>
+ 218:	81 e4       	ldi	r24, 0x41	; 65
+ 21a:	91 e0       	ldi	r25, 0x01	; 1
+ 21c:	58 d0       	rcall	.+176    	; 0x2ce <TwoWire::begin(unsigned char)>
+ 21e:	05 c0       	rjmp	.+10     	; 0x22a <startI2C()+0x24>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:206
+  else
+    Wire.begin(I2C_ADDRESS_JUMPER); //Force address to I2C_ADDRESS_JUMPER if user has closed the solder jumper
+ 220:	6a e4       	ldi	r22, 0x4A	; 74
+ 222:	70 e0       	ldi	r23, 0x00	; 0
+ 224:	81 e4       	ldi	r24, 0x41	; 65
+ 226:	91 e0       	ldi	r25, 0x01	; 1
+ 228:	54 d0       	rcall	.+168    	; 0x2d2 <TwoWire::begin(int)>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:209
+
+  //The connections to the interrupts are severed when a Wire.begin occurs. So re-declare them.
+  Wire.onReceive(receiveEvent);
+ 22a:	62 e3       	ldi	r22, 0x32	; 50
+ 22c:	71 e0       	ldi	r23, 0x01	; 1
+ 22e:	81 e4       	ldi	r24, 0x41	; 65
+ 230:	91 e0       	ldi	r25, 0x01	; 1
+ 232:	a1 d0       	rcall	.+322    	; 0x376 <TwoWire::onReceive(void (*)(int))>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:210
+  Wire.onRequest(requestEvent);
+ 234:	6e ed       	ldi	r22, 0xDE	; 222
+ 236:	70 e0       	ldi	r23, 0x00	; 0
+ 238:	81 e4       	ldi	r24, 0x41	; 65
+ 23a:	91 e0       	ldi	r25, 0x01	; 1
+ 23c:	a1 c0       	rjmp	.+322    	; 0x380 <TwoWire::onRequest(void (*)())>
+
+0000023e <setup>:
+setup():
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:81
+byte colPins[COLS] = {8, 2, 0};
+Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+
+void setup(void)
+{
+  pinMode(addr, INPUT_PULLUP);
+ 23e:	62 e0       	ldi	r22, 0x02	; 2
+ 240:	89 e0       	ldi	r24, 0x09	; 9
+ 242:	da d5       	rcall	.+2996   	; 0xdf8 <pinMode>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:82
+  pinMode(interruptPin, OUTPUT); //Goes low when a button event is on the stack
+ 244:	61 e0       	ldi	r22, 0x01	; 1
+ 246:	87 e0       	ldi	r24, 0x07	; 7
+ 248:	d7 d5       	rcall	.+2990   	; 0xdf8 <pinMode>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:85
+
+  //Disable ADC
+  ADCSRA = 0;
+ 24a:	16 b8       	out	0x06, r1	; 6
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:88
+  
+  //Disble Brown-Out Detect
+  MCUCR = bit (BODS) | bit (BODSE);
+ 24c:	84 e8       	ldi	r24, 0x84	; 132
+ 24e:	85 bf       	out	0x35, r24	; 53
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:89
+  MCUCR = bit (BODS);
+ 250:	80 e8       	ldi	r24, 0x80	; 128
+ 252:	85 bf       	out	0x35, r24	; 53
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:93
+
+  //Power down various bits of hardware to lower power usage
+  //set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+  set_sleep_mode(SLEEP_MODE_IDLE);
+ 254:	85 b7       	in	r24, 0x35	; 53
+ 256:	87 7e       	andi	r24, 0xE7	; 231
+ 258:	85 bf       	out	0x35, r24	; 53
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:94
+  sleep_enable();
+ 25a:	85 b7       	in	r24, 0x35	; 53
+ 25c:	80 62       	ori	r24, 0x20	; 32
+ 25e:	85 bf       	out	0x35, r24	; 53
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:96
+
+  readSystemSettings(); //Load all system settings from EEPROM
+ 260:	c0 df       	rcall	.-128    	; 0x1e2 <readSystemSettings()>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:98
+
+  startI2C(); //Determine the I2C address we should be using and begin listening on I2C bus
+ 262:	d1 cf       	rjmp	.-94     	; 0x206 <startI2C()>
+
+00000264 <receiveEvent(int)>:
+_Z12receiveEventi():
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:124
+
+//When KeyPad receives data bytes, this function is called as an interrupt
+//The only valid command we can receive from the master is the change I2C adddress command
+void receiveEvent(int numberOfBytesReceived)
+{
+  while (Wire.available())
+ 264:	81 e4       	ldi	r24, 0x41	; 65
+ 266:	91 e0       	ldi	r25, 0x01	; 1
+ 268:	5e d0       	rcall	.+188    	; 0x326 <TwoWire::available()>
+ 26a:	89 2b       	or	r24, r25
+ 26c:	f1 f0       	breq	.+60     	; 0x2aa <receiveEvent(int)+0x46>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:127
+  {
+    //Record bytes to local array
+    byte incoming = Wire.read();
+ 26e:	81 e4       	ldi	r24, 0x41	; 65
+ 270:	91 e0       	ldi	r25, 0x01	; 1
+ 272:	66 d0       	rcall	.+204    	; 0x340 <TwoWire::read()>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:129
+
+    if (incoming == COMMAND_CHANGE_ADDRESS) //Set new I2C address
+ 274:	87 3c       	cpi	r24, 0xC7	; 199
+ 276:	b1 f7       	brne	.-20     	; 0x264 <receiveEvent(int)>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:131
+    {
+      if (Wire.available())
+ 278:	81 e4       	ldi	r24, 0x41	; 65
+ 27a:	91 e0       	ldi	r25, 0x01	; 1
+ 27c:	54 d0       	rcall	.+168    	; 0x326 <TwoWire::available()>
+ 27e:	89 2b       	or	r24, r25
+ 280:	89 f3       	breq	.-30     	; 0x264 <receiveEvent(int)>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:133
+      {
+        setting_i2c_address = Wire.read();
+ 282:	81 e4       	ldi	r24, 0x41	; 65
+ 284:	91 e0       	ldi	r25, 0x01	; 1
+ 286:	5c d0       	rcall	.+184    	; 0x340 <TwoWire::read()>
+ 288:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <setting_i2c_address>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:136
+
+        //Error check
+        if (setting_i2c_address < 0x08 || setting_i2c_address > 0x77)
+ 28c:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <setting_i2c_address>
+ 290:	88 30       	cpi	r24, 0x08	; 8
+ 292:	40 f3       	brcs	.-48     	; 0x264 <receiveEvent(int)>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:136 (discriminator 2)
+ 294:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <setting_i2c_address>
+ 298:	88 37       	cpi	r24, 0x78	; 120
+ 29a:	20 f7       	brcc	.-56     	; 0x264 <receiveEvent(int)>
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:139
+          continue; //Command failed. This address is out of bounds.
+
+        EEPROM.write(LOCATION_I2C_ADDRESS, setting_i2c_address);
+ 29c:	60 91 74 00 	lds	r22, 0x0074	; 0x800074 <setting_i2c_address>
+_ZN5EERefaSEh():
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\EEPROM/EEPROM.h:47
+ 2a0:	81 e0       	ldi	r24, 0x01	; 1
+ 2a2:	90 e0       	ldi	r25, 0x00	; 0
+ 2a4:	70 d6       	rcall	.+3296   	; 0xf86 <eeprom_write_byte>
+_Z12receiveEventi():
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:142
+
+        //Our I2C address may have changed because of user's command
+        startI2C(); //Determine the I2C address we should be using and begin listening on I2C bus
+ 2a6:	af df       	rcall	.-162    	; 0x206 <startI2C()>
+ 2a8:	dd cf       	rjmp	.-70     	; 0x264 <receiveEvent(int)>
+ 2aa:	08 95       	ret
+
+000002ac <_GLOBAL__sub_I_setting_i2c_address>:
+_GLOBAL__sub_I_setting_i2c_address():
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:211
+    Wire.begin(I2C_ADDRESS_JUMPER); //Force address to I2C_ADDRESS_JUMPER if user has closed the solder jumper
+
+  //The connections to the interrupts are severed when a Wire.begin occurs. So re-declare them.
+  Wire.onReceive(receiveEvent);
+  Wire.onRequest(requestEvent);
+}
+ 2ac:	ef 92       	push	r14
+ 2ae:	0f 93       	push	r16
+__static_initialization_and_destruction_0():
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:77
+//Pin X on keypad is connected to Y:
+//KeyPad               7, 6, 4, 2
+byte rowPins[ROWS] = {10, 5, 3, 1};
+//Keypad              5, 3, 1
+byte colPins[COLS] = {8, 2, 0};
+Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+ 2b0:	83 e0       	ldi	r24, 0x03	; 3
+ 2b2:	e8 2e       	mov	r14, r24
+ 2b4:	04 e0       	ldi	r16, 0x04	; 4
+ 2b6:	20 e6       	ldi	r18, 0x60	; 96
+ 2b8:	30 e0       	ldi	r19, 0x00	; 0
+ 2ba:	43 e6       	ldi	r20, 0x63	; 99
+ 2bc:	50 e0       	ldi	r21, 0x00	; 0
+ 2be:	67 e6       	ldi	r22, 0x67	; 103
+ 2c0:	70 e0       	ldi	r23, 0x00	; 0
+ 2c2:	82 e8       	ldi	r24, 0x82	; 130
+ 2c4:	90 e0       	ldi	r25, 0x00	; 0
+ 2c6:	ca d1       	rcall	.+916    	; 0x65c <Keypad::Keypad(char*, unsigned char*, unsigned char*, unsigned char, unsigned char)>
+_GLOBAL__sub_I_setting_i2c_address():
+C:\Users\andrea.devore\Documents\GitHub\Qwiic_Keypad\Firmware\Qwiic_KeyPad/Qwiic_KeyPad.ino:211
+    Wire.begin(I2C_ADDRESS_JUMPER); //Force address to I2C_ADDRESS_JUMPER if user has closed the solder jumper
+
+  //The connections to the interrupts are severed when a Wire.begin occurs. So re-declare them.
+  Wire.onReceive(receiveEvent);
+  Wire.onRequest(requestEvent);
+}
+ 2c8:	0f 91       	pop	r16
+ 2ca:	ef 90       	pop	r14
+ 2cc:	08 95       	ret
+
+000002ce <TwoWire::begin(unsigned char)>:
+_ZN7TwoWire5beginEh():
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src/Wire.cpp:585
+  }
+
+  return value;
+}
+
+void TwoWire::flush(void) {
+ 2ce:	86 2f       	mov	r24, r22
+ 2d0:	65 c0       	rjmp	.+202    	; 0x39c <USI_TWI_Slave_Initialise>
+
+000002d2 <TwoWire::begin(int)>:
+_ZN7TwoWire5beginEi():
+ 2d2:	86 2f       	mov	r24, r22
+_ZN7TwoWire5beginEh():
+ 2d4:	63 c0       	rjmp	.+198    	; 0x39c <USI_TWI_Slave_Initialise>
+
+000002d6 <TwoWire::end()>:
+_ZN7TwoWire3endEv():
+ 2d6:	80 c0       	rjmp	.+256    	; 0x3d8 <USI_TWI_Slave_Disable>
+
+000002d8 <TwoWire::write(unsigned char)>:
+_ZN7TwoWire5writeEh():
+ 2d8:	cf 93       	push	r28
+ 2da:	80 91 42 01 	lds	r24, 0x0142	; 0x800142 <TwoWire::transmitting>
+ 2de:	88 23       	and	r24, r24
+ 2e0:	c1 f0       	breq	.+48     	; 0x312 <TwoWire::write(unsigned char)+0x3a>
+ 2e2:	80 91 43 01 	lds	r24, 0x0143	; 0x800143 <TwoWire::BufferLength>
+ 2e6:	80 32       	cpi	r24, 0x20	; 32
+ 2e8:	18 f0       	brcs	.+6      	; 0x2f0 <TwoWire::write(unsigned char)+0x18>
+ 2ea:	80 e0       	ldi	r24, 0x00	; 0
+ 2ec:	90 e0       	ldi	r25, 0x00	; 0
+ 2ee:	19 c0       	rjmp	.+50     	; 0x322 <TwoWire::write(unsigned char)+0x4a>
+ 2f0:	80 91 44 01 	lds	r24, 0x0144	; 0x800144 <TwoWire::BufferIndex>
+ 2f4:	e0 91 75 00 	lds	r30, 0x0075	; 0x800075 <TwoWire::Buffer>
+ 2f8:	f0 91 76 00 	lds	r31, 0x0076	; 0x800076 <TwoWire::Buffer+0x1>
+ 2fc:	e8 0f       	add	r30, r24
+ 2fe:	f1 1d       	adc	r31, r1
+ 300:	60 83       	st	Z, r22
+ 302:	80 91 44 01 	lds	r24, 0x0144	; 0x800144 <TwoWire::BufferIndex>
+ 306:	8f 5f       	subi	r24, 0xFF	; 255
+ 308:	80 93 44 01 	sts	0x0144, r24	; 0x800144 <TwoWire::BufferIndex>
+ 30c:	80 93 43 01 	sts	0x0143, r24	; 0x800143 <TwoWire::BufferLength>
+ 310:	06 c0       	rjmp	.+12     	; 0x31e <TwoWire::write(unsigned char)+0x46>
+ 312:	c6 2f       	mov	r28, r22
+ 314:	8f d0       	rcall	.+286    	; 0x434 <USI_TWI_Space_In_Transmission_Buffer>
+ 316:	88 23       	and	r24, r24
+ 318:	41 f3       	breq	.-48     	; 0x2ea <TwoWire::write(unsigned char)+0x12>
+ 31a:	8c 2f       	mov	r24, r28
+ 31c:	63 d0       	rcall	.+198    	; 0x3e4 <USI_TWI_Transmit_Byte>
+ 31e:	81 e0       	ldi	r24, 0x01	; 1
+ 320:	90 e0       	ldi	r25, 0x00	; 0
+ 322:	cf 91       	pop	r28
+ 324:	08 95       	ret
+
+00000326 <TwoWire::available()>:
+_ZN7TwoWire9availableEv():
+ 326:	80 91 43 01 	lds	r24, 0x0143	; 0x800143 <TwoWire::BufferLength>
+ 32a:	88 23       	and	r24, r24
+ 32c:	31 f0       	breq	.+12     	; 0x33a <TwoWire::available()+0x14>
+ 32e:	90 e0       	ldi	r25, 0x00	; 0
+ 330:	20 91 44 01 	lds	r18, 0x0144	; 0x800144 <TwoWire::BufferIndex>
+ 334:	82 1b       	sub	r24, r18
+ 336:	91 09       	sbc	r25, r1
+ 338:	08 95       	ret
+ 33a:	75 d0       	rcall	.+234    	; 0x426 <USI_TWI_Data_In_Receive_Buffer>
+ 33c:	90 e0       	ldi	r25, 0x00	; 0
+ 33e:	08 95       	ret
+
+00000340 <TwoWire::read()>:
+_ZN7TwoWire4readEv():
+ 340:	f2 df       	rcall	.-28     	; 0x326 <TwoWire::available()>
+ 342:	89 2b       	or	r24, r25
+ 344:	a9 f0       	breq	.+42     	; 0x370 <TwoWire::read()+0x30>
+ 346:	80 91 43 01 	lds	r24, 0x0143	; 0x800143 <TwoWire::BufferLength>
+ 34a:	88 23       	and	r24, r24
+ 34c:	71 f0       	breq	.+28     	; 0x36a <TwoWire::read()+0x2a>
+ 34e:	20 91 44 01 	lds	r18, 0x0144	; 0x800144 <TwoWire::BufferIndex>
+ 352:	e0 91 75 00 	lds	r30, 0x0075	; 0x800075 <TwoWire::Buffer>
+ 356:	f0 91 76 00 	lds	r31, 0x0076	; 0x800076 <TwoWire::Buffer+0x1>
+ 35a:	e2 0f       	add	r30, r18
+ 35c:	f1 1d       	adc	r31, r1
+ 35e:	80 81       	ld	r24, Z
+ 360:	90 e0       	ldi	r25, 0x00	; 0
+ 362:	2f 5f       	subi	r18, 0xFF	; 255
+ 364:	20 93 44 01 	sts	0x0144, r18	; 0x800144 <TwoWire::BufferIndex>
+ 368:	08 95       	ret
+ 36a:	4c d0       	rcall	.+152    	; 0x404 <USI_TWI_Receive_Byte>
+ 36c:	90 e0       	ldi	r25, 0x00	; 0
+ 36e:	08 95       	ret
+ 370:	8f ef       	ldi	r24, 0xFF	; 255
+ 372:	9f ef       	ldi	r25, 0xFF	; 255
+ 374:	08 95       	ret
+
+00000376 <TwoWire::onReceive(void (*)(int))>:
+_ZN7TwoWire9onReceiveEPFviE():
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src/Wire.cpp:591
+  // XXX: to be implemented.
+}
+
+// sets function called on slave write
+void TwoWire::onReceive( void (*function)(int) ) {
+  USI_TWI_On_Slave_Receive = function;
+ 376:	70 93 46 01 	sts	0x0146, r23	; 0x800146 <USI_TWI_On_Slave_Receive+0x1>
+ 37a:	60 93 45 01 	sts	0x0145, r22	; 0x800145 <USI_TWI_On_Slave_Receive>
+ 37e:	08 95       	ret
+
+00000380 <TwoWire::onRequest(void (*)())>:
+_ZN7TwoWire9onRequestEPFvvE():
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src/Wire.cpp:596
+}
+
+// sets function called on slave read
+void TwoWire::onRequest( void (*function)(void) ) {
+  USI_TWI_On_Slave_Transmit = function;
+ 380:	70 93 48 01 	sts	0x0148, r23	; 0x800148 <USI_TWI_On_Slave_Transmit+0x1>
+ 384:	60 93 47 01 	sts	0x0147, r22	; 0x800147 <USI_TWI_On_Slave_Transmit>
+ 388:	08 95       	ret
+
+0000038a <Flush_TWI_Buffers>:
+Flush_TWI_Buffers():
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:153
+// Check if there is an active data session.
+unsigned char USI_TWI_Slave_Is_Active()
+{
+	// Active if Overflow Interrupt is enabled and no Stop Condition occurred
+	return (USICR & (1 << USIOIE)) && ((USISR & (1 << USIPF)) == 0);
+}
+ 38a:	10 92 4b 01 	sts	0x014B, r1	; 0x80014b <TWI_RxTail>
+ 38e:	10 92 4c 01 	sts	0x014C, r1	; 0x80014c <TWI_RxHead>
+ 392:	10 92 49 01 	sts	0x0149, r1	; 0x800149 <TWI_TxTail>
+ 396:	10 92 4a 01 	sts	0x014A, r1	; 0x80014a <TWI_TxHead>
+ 39a:	08 95       	ret
+
+0000039c <USI_TWI_Slave_Initialise>:
+USI_TWI_Slave_Initialise():
+ 39c:	cf 93       	push	r28
+ 39e:	df 93       	push	r29
+ 3a0:	1f 92       	push	r1
+ 3a2:	cd b7       	in	r28, 0x3d	; 61
+ 3a4:	de b7       	in	r29, 0x3e	; 62
+ 3a6:	89 83       	std	Y+1, r24	; 0x01
+ 3a8:	f0 df       	rcall	.-32     	; 0x38a <Flush_TWI_Buffers>
+ 3aa:	89 81       	ldd	r24, Y+1	; 0x01
+ 3ac:	80 93 4e 01 	sts	0x014E, r24	; 0x80014e <TWI_slaveAddress>
+ 3b0:	10 92 48 01 	sts	0x0148, r1	; 0x800148 <USI_TWI_On_Slave_Transmit+0x1>
+ 3b4:	10 92 47 01 	sts	0x0147, r1	; 0x800147 <USI_TWI_On_Slave_Transmit>
+ 3b8:	10 92 46 01 	sts	0x0146, r1	; 0x800146 <USI_TWI_On_Slave_Receive+0x1>
+ 3bc:	10 92 45 01 	sts	0x0145, r1	; 0x800145 <USI_TWI_On_Slave_Receive>
+ 3c0:	dc 9a       	sbi	0x1b, 4	; 27
+ 3c2:	de 9a       	sbi	0x1b, 6	; 27
+ 3c4:	d4 9a       	sbi	0x1a, 4	; 26
+ 3c6:	d6 98       	cbi	0x1a, 6	; 26
+ 3c8:	88 ea       	ldi	r24, 0xA8	; 168
+ 3ca:	8d b9       	out	0x0d, r24	; 13
+ 3cc:	80 ef       	ldi	r24, 0xF0	; 240
+ 3ce:	8e b9       	out	0x0e, r24	; 14
+ 3d0:	0f 90       	pop	r0
+ 3d2:	df 91       	pop	r29
+ 3d4:	cf 91       	pop	r28
+ 3d6:	08 95       	ret
+
+000003d8 <USI_TWI_Slave_Disable>:
+USI_TWI_Slave_Disable():
+ 3d8:	d4 98       	cbi	0x1a, 4	; 26
+ 3da:	d6 98       	cbi	0x1a, 6	; 26
+ 3dc:	1d b8       	out	0x0d, r1	; 13
+ 3de:	80 ef       	ldi	r24, 0xF0	; 240
+ 3e0:	8e b9       	out	0x0e, r24	; 14
+ 3e2:	08 95       	ret
+
+000003e4 <USI_TWI_Transmit_Byte>:
+USI_TWI_Transmit_Byte():
+ 3e4:	90 91 4a 01 	lds	r25, 0x014A	; 0x80014a <TWI_TxHead>
+ 3e8:	9f 5f       	subi	r25, 0xFF	; 255
+ 3ea:	9f 70       	andi	r25, 0x0F	; 15
+ 3ec:	20 91 49 01 	lds	r18, 0x0149	; 0x800149 <TWI_TxTail>
+ 3f0:	92 17       	cp	r25, r18
+ 3f2:	e1 f3       	breq	.-8      	; 0x3ec <USI_TWI_Transmit_Byte+0x8>
+ 3f4:	e9 2f       	mov	r30, r25
+ 3f6:	f0 e0       	ldi	r31, 0x00	; 0
+ 3f8:	e8 59       	subi	r30, 0x98	; 152
+ 3fa:	fe 4f       	sbci	r31, 0xFE	; 254
+ 3fc:	80 83       	st	Z, r24
+ 3fe:	90 93 4a 01 	sts	0x014A, r25	; 0x80014a <TWI_TxHead>
+ 402:	08 95       	ret
+
+00000404 <USI_TWI_Receive_Byte>:
+USI_TWI_Receive_Byte():
+ 404:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <TWI_RxTail>
+ 408:	90 91 4c 01 	lds	r25, 0x014C	; 0x80014c <TWI_RxHead>
+ 40c:	98 17       	cp	r25, r24
+ 40e:	e1 f3       	breq	.-8      	; 0x408 <USI_TWI_Receive_Byte+0x4>
+ 410:	e0 91 4b 01 	lds	r30, 0x014B	; 0x80014b <TWI_RxTail>
+ 414:	ef 5f       	subi	r30, 0xFF	; 255
+ 416:	ef 70       	andi	r30, 0x0F	; 15
+ 418:	e0 93 4b 01 	sts	0x014B, r30	; 0x80014b <TWI_RxTail>
+ 41c:	f0 e0       	ldi	r31, 0x00	; 0
+ 41e:	e8 5a       	subi	r30, 0xA8	; 168
+ 420:	fe 4f       	sbci	r31, 0xFE	; 254
+ 422:	80 81       	ld	r24, Z
+ 424:	08 95       	ret
+
+00000426 <USI_TWI_Data_In_Receive_Buffer>:
+USI_TWI_Data_In_Receive_Buffer():
+ 426:	90 91 4b 01 	lds	r25, 0x014B	; 0x80014b <TWI_RxTail>
+ 42a:	80 91 4c 01 	lds	r24, 0x014C	; 0x80014c <TWI_RxHead>
+ 42e:	89 1b       	sub	r24, r25
+ 430:	8f 70       	andi	r24, 0x0F	; 15
+ 432:	08 95       	ret
+
+00000434 <USI_TWI_Space_In_Transmission_Buffer>:
+USI_TWI_Space_In_Transmission_Buffer():
+ 434:	90 91 4a 01 	lds	r25, 0x014A	; 0x80014a <TWI_TxHead>
+ 438:	80 91 49 01 	lds	r24, 0x0149	; 0x800149 <TWI_TxTail>
+ 43c:	9f 5f       	subi	r25, 0xFF	; 255
+ 43e:	89 1b       	sub	r24, r25
+ 440:	8f 70       	andi	r24, 0x0F	; 15
+ 442:	08 95       	ret
+
+00000444 <__vector_15>:
+__vector_15():
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:165
+ISR(USI_START_VECTOR)
+#elif __ICCAVR__
+#pragma vector = USI_START_VECTOR
+__interrupt void USI_Start_Condition_ISR(void)
+#endif
+{
+ 444:	1f 92       	push	r1
+ 446:	0f 92       	push	r0
+ 448:	0f b6       	in	r0, 0x3f	; 63
+ 44a:	0f 92       	push	r0
+ 44c:	11 24       	eor	r1, r1
+ 44e:	0f 93       	push	r16
+ 450:	1f 93       	push	r17
+ 452:	2f 93       	push	r18
+ 454:	3f 93       	push	r19
+ 456:	4f 93       	push	r20
+ 458:	5f 93       	push	r21
+ 45a:	6f 93       	push	r22
+ 45c:	7f 93       	push	r23
+ 45e:	8f 93       	push	r24
+ 460:	9f 93       	push	r25
+ 462:	af 93       	push	r26
+ 464:	bf 93       	push	r27
+ 466:	cf 93       	push	r28
+ 468:	ef 93       	push	r30
+ 46a:	ff 93       	push	r31
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:169
+	unsigned char tmpPin; // Temporary variable for pin state
+	unsigned char tmpRxHead; // Temporary variable to store volatile
+	// call slave receive callback on repeated start
+	if (USI_TWI_On_Slave_Receive) {
+ 46c:	00 91 45 01 	lds	r16, 0x0145	; 0x800145 <USI_TWI_On_Slave_Receive>
+ 470:	10 91 46 01 	lds	r17, 0x0146	; 0x800146 <USI_TWI_On_Slave_Receive+0x1>
+ 474:	01 15       	cp	r16, r1
+ 476:	11 05       	cpc	r17, r1
+ 478:	61 f0       	breq	.+24     	; 0x492 <__vector_15+0x4e>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:170
+		tmpRxHead = TWI_RxHead;
+ 47a:	c0 91 4c 01 	lds	r28, 0x014C	; 0x80014c <TWI_RxHead>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:171
+		if (TWI_RxTail != tmpRxHead) { // data in receive buffer
+ 47e:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <TWI_RxTail>
+ 482:	8c 17       	cp	r24, r28
+ 484:	31 f0       	breq	.+12     	; 0x492 <__vector_15+0x4e>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:172
+			USI_TWI_On_Slave_Receive(USI_TWI_Data_In_Receive_Buffer());
+ 486:	cf df       	rcall	.-98     	; 0x426 <USI_TWI_Data_In_Receive_Buffer>
+ 488:	90 e0       	ldi	r25, 0x00	; 0
+ 48a:	f8 01       	movw	r30, r16
+ 48c:	09 95       	icall
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:174
+			// reset rx buffer
+			TWI_RxTail = tmpRxHead;
+ 48e:	c0 93 4b 01 	sts	0x014B, r28	; 0x80014b <TWI_RxTail>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:178
+		}
+	}
+
+	USI_TWI_Overflow_State = USI_SLAVE_CHECK_ADDRESS;
+ 492:	10 92 4d 01 	sts	0x014D, r1	; 0x80014d <USI_TWI_Overflow_State>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:179
+	DDR_USI &= ~(1 << PORT_USI_SDA); // Set SDA as input
+ 496:	d6 98       	cbi	0x1a, 6	; 26
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:180 (discriminator 2)
+	while ((tmpPin = (PIN_USI_CL & (1 << PORT_USI_SCL))) && ((PIN_USI & (1 << PIN_USI_SDA)) == 0))
+ 498:	cc 9b       	sbis	0x19, 4	; 25
+ 49a:	04 c0       	rjmp	.+8      	; 0x4a4 <__vector_15+0x60>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:180 (discriminator 1)
+ 49c:	ce 9b       	sbis	0x19, 6	; 25
+ 49e:	fc cf       	rjmp	.-8      	; 0x498 <__vector_15+0x54>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:185
+		; // Wait for SCL to go low to ensure the "Start Condition" has completed.
+	      // If a Stop condition arises then leave the interrupt to prevent waiting forever.
+	if (tmpPin) {
+		// Stop Condition (waiting for next Start Condition)
+		USICR = (1 << USISIE) | (0 << USIOIE) | // Enable Start Condition Interrupt. Disable Overflow Interrupt.
+ 4a0:	88 ea       	ldi	r24, 0xA8	; 168
+ 4a2:	01 c0       	rjmp	.+2      	; 0x4a6 <__vector_15+0x62>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:192
+		                                        // to first Start Condition (potentail failure)
+		        (1 << USICS1) | (0 << USICS0) | (0 << USICLK) | // Shift Register Clock Source = External, positive edge
+		        (0 << USITC);
+	} else {
+		// really Start Condition (Enable Overflow Interrupt)
+		USICR = (1 << USISIE) | (1 << USIOIE)
+ 4a4:	88 ef       	ldi	r24, 0xF8	; 248
+ 4a6:	8d b9       	out	0x0d, r24	; 13
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:198
+		        | // Enable Overflow and Start Condition Interrupt. (Keep StartCondInt to detect RESTART)
+		        (1 << USIWM1) | (1 << USIWM0) |                 // Set USI in Two-wire mode.
+		        (1 << USICS1) | (0 << USICS0) | (0 << USICLK) | // Shift Register Clock Source = External, positive edge
+		        (0 << USITC);
+	}
+	USISR = (1 << USI_START_COND_INT) | (1 << USIOIF) | (1 << USIPF) | (1 << USIDC) | // Clear flags
+ 4a8:	80 ef       	ldi	r24, 0xF0	; 240
+ 4aa:	8e b9       	out	0x0e, r24	; 14
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:200
+	        (0x0 << USICNT0); // Set USI to sample 8 bits i.e. count 16 external pin toggles.
+}
+ 4ac:	ff 91       	pop	r31
+ 4ae:	ef 91       	pop	r30
+ 4b0:	cf 91       	pop	r28
+ 4b2:	bf 91       	pop	r27
+ 4b4:	af 91       	pop	r26
+ 4b6:	9f 91       	pop	r25
+ 4b8:	8f 91       	pop	r24
+ 4ba:	7f 91       	pop	r23
+ 4bc:	6f 91       	pop	r22
+ 4be:	5f 91       	pop	r21
+ 4c0:	4f 91       	pop	r20
+ 4c2:	3f 91       	pop	r19
+ 4c4:	2f 91       	pop	r18
+ 4c6:	1f 91       	pop	r17
+ 4c8:	0f 91       	pop	r16
+ 4ca:	0f 90       	pop	r0
+ 4cc:	0f be       	out	0x3f, r0	; 63
+ 4ce:	0f 90       	pop	r0
+ 4d0:	1f 90       	pop	r1
+ 4d2:	18 95       	reti
+
+000004d4 <__vector_16>:
+__vector_16():
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:212
+ISR(USI_OVERFLOW_VECTOR)
+#elif __ICCAVR__
+#pragma vector = USI_OVERFLOW_VECTOR
+__interrupt void USI_Counter_Overflow_ISR(void)
+#endif
+{
+ 4d4:	1f 92       	push	r1
+ 4d6:	0f 92       	push	r0
+ 4d8:	0f b6       	in	r0, 0x3f	; 63
+ 4da:	0f 92       	push	r0
+ 4dc:	11 24       	eor	r1, r1
+ 4de:	0f 93       	push	r16
+ 4e0:	1f 93       	push	r17
+ 4e2:	2f 93       	push	r18
+ 4e4:	3f 93       	push	r19
+ 4e6:	4f 93       	push	r20
+ 4e8:	5f 93       	push	r21
+ 4ea:	6f 93       	push	r22
+ 4ec:	7f 93       	push	r23
+ 4ee:	8f 93       	push	r24
+ 4f0:	9f 93       	push	r25
+ 4f2:	af 93       	push	r26
+ 4f4:	bf 93       	push	r27
+ 4f6:	cf 93       	push	r28
+ 4f8:	ef 93       	push	r30
+ 4fa:	ff 93       	push	r31
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:217
+	unsigned char tmpRxHead;
+	unsigned char tmpTxTail; // Temporary variables to store volatiles
+	unsigned char tmpUSIDR;
+
+	switch (USI_TWI_Overflow_State) {
+ 4fc:	80 91 4d 01 	lds	r24, 0x014D	; 0x80014d <USI_TWI_Overflow_State>
+ 500:	82 30       	cpi	r24, 0x02	; 2
+ 502:	09 f4       	brne	.+2      	; 0x506 <__vector_16+0x32>
+ 504:	4c c0       	rjmp	.+152    	; 0x59e <__vector_16+0xca>
+ 506:	28 f4       	brcc	.+10     	; 0x512 <__vector_16+0x3e>
+ 508:	88 23       	and	r24, r24
+ 50a:	59 f0       	breq	.+22     	; 0x522 <__vector_16+0x4e>
+ 50c:	81 30       	cpi	r24, 0x01	; 1
+ 50e:	51 f1       	breq	.+84     	; 0x564 <__vector_16+0x90>
+ 510:	83 c0       	rjmp	.+262    	; 0x618 <__vector_16+0x144>
+ 512:	84 30       	cpi	r24, 0x04	; 4
+ 514:	09 f4       	brne	.+2      	; 0x518 <__vector_16+0x44>
+ 516:	49 c0       	rjmp	.+146    	; 0x5aa <__vector_16+0xd6>
+ 518:	10 f1       	brcs	.+68     	; 0x55e <__vector_16+0x8a>
+ 51a:	85 30       	cpi	r24, 0x05	; 5
+ 51c:	09 f4       	brne	.+2      	; 0x520 <__vector_16+0x4c>
+ 51e:	64 c0       	rjmp	.+200    	; 0x5e8 <__vector_16+0x114>
+ 520:	7b c0       	rjmp	.+246    	; 0x618 <__vector_16+0x144>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:221
+	// ---------- Address mode ----------
+	// Check address and send ACK (and next USI_SLAVE_SEND_DATA) if OK, else reset USI.
+	case USI_SLAVE_CHECK_ADDRESS:
+		if ((USIDR == 0) || ((USIDR >> 1) == TWI_slaveAddress)) {
+ 522:	8f b1       	in	r24, 0x0f	; 15
+ 524:	88 23       	and	r24, r24
+ 526:	31 f0       	breq	.+12     	; 0x534 <__vector_16+0x60>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:221 (discriminator 1)
+ 528:	8f b1       	in	r24, 0x0f	; 15
+ 52a:	86 95       	lsr	r24
+ 52c:	90 91 4e 01 	lds	r25, 0x014E	; 0x80014e <TWI_slaveAddress>
+ 530:	89 13       	cpse	r24, r25
+ 532:	30 c0       	rjmp	.+96     	; 0x594 <__vector_16+0xc0>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:222
+			if (USIDR & 0x01) {
+ 534:	78 9b       	sbis	0x0f, 0	; 15
+ 536:	0d c0       	rjmp	.+26     	; 0x552 <__vector_16+0x7e>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:223
+				if (USI_TWI_On_Slave_Transmit) {
+ 538:	e0 91 47 01 	lds	r30, 0x0147	; 0x800147 <USI_TWI_On_Slave_Transmit>
+ 53c:	f0 91 48 01 	lds	r31, 0x0148	; 0x800148 <USI_TWI_On_Slave_Transmit+0x1>
+ 540:	30 97       	sbiw	r30, 0x00	; 0
+ 542:	29 f0       	breq	.+10     	; 0x54e <__vector_16+0x7a>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:225
+					// reset tx buffer and call callback
+					tmpTxTail = TWI_TxHead;
+ 544:	80 91 4a 01 	lds	r24, 0x014A	; 0x80014a <TWI_TxHead>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:226
+					TWI_TxTail = tmpTxTail;
+ 548:	80 93 49 01 	sts	0x0149, r24	; 0x800149 <TWI_TxTail>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:227
+					USI_TWI_On_Slave_Transmit();
+ 54c:	09 95       	icall
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:229
+				}
+				USI_TWI_Overflow_State = USI_SLAVE_SEND_DATA;
+ 54e:	81 e0       	ldi	r24, 0x01	; 1
+ 550:	01 c0       	rjmp	.+2      	; 0x554 <__vector_16+0x80>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:231
+			} else {
+				USI_TWI_Overflow_State = USI_SLAVE_REQUEST_DATA;
+ 552:	84 e0       	ldi	r24, 0x04	; 4
+ 554:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <USI_TWI_Overflow_State>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:233
+			}
+			SET_USI_TO_SEND_ACK();
+ 558:	1f b8       	out	0x0f, r1	; 15
+ 55a:	d6 9a       	sbi	0x1a, 6	; 26
+ 55c:	5b c0       	rjmp	.+182    	; 0x614 <__vector_16+0x140>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:242
+		break;
+
+	// ----- Master write data mode ------
+	// Check reply and goto USI_SLAVE_SEND_DATA if OK, else reset USI.
+	case USI_SLAVE_CHECK_REPLY_FROM_SEND_DATA:
+		if (USIDR) // If NACK, the master does not want more data.
+ 55e:	8f b1       	in	r24, 0x0f	; 15
+ 560:	81 11       	cpse	r24, r1
+ 562:	18 c0       	rjmp	.+48     	; 0x594 <__vector_16+0xc0>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:253
+
+	// Copy data from buffer to USIDR and set USI to shift byte. Next USI_SLAVE_REQUEST_REPLY_FROM_SEND_DATA
+	case USI_SLAVE_SEND_DATA:
+
+		// Get data from Buffer
+		tmpTxTail = TWI_TxTail; // Not necessary, but prevents warnings
+ 564:	80 91 49 01 	lds	r24, 0x0149	; 0x800149 <TWI_TxTail>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:254
+		if (TWI_TxHead != tmpTxTail) {
+ 568:	90 91 4a 01 	lds	r25, 0x014A	; 0x80014a <TWI_TxHead>
+ 56c:	98 17       	cp	r25, r24
+ 56e:	91 f0       	breq	.+36     	; 0x594 <__vector_16+0xc0>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:255
+			TWI_TxTail = (TWI_TxTail + 1) & TWI_TX_BUFFER_MASK;
+ 570:	80 91 49 01 	lds	r24, 0x0149	; 0x800149 <TWI_TxTail>
+ 574:	8f 5f       	subi	r24, 0xFF	; 255
+ 576:	8f 70       	andi	r24, 0x0F	; 15
+ 578:	80 93 49 01 	sts	0x0149, r24	; 0x800149 <TWI_TxTail>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:256
+			USIDR      = TWI_TxBuf[TWI_TxTail];
+ 57c:	e0 91 49 01 	lds	r30, 0x0149	; 0x800149 <TWI_TxTail>
+ 580:	f0 e0       	ldi	r31, 0x00	; 0
+ 582:	e8 59       	subi	r30, 0x98	; 152
+ 584:	fe 4f       	sbci	r31, 0xFE	; 254
+ 586:	80 81       	ld	r24, Z
+ 588:	8f b9       	out	0x0f, r24	; 15
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:262
+		} else // If the buffer is empty then:
+		{
+			SET_USI_TO_TWI_START_CONDITION_MODE();
+			return;
+		}
+		USI_TWI_Overflow_State = USI_SLAVE_REQUEST_REPLY_FROM_SEND_DATA;
+ 58a:	82 e0       	ldi	r24, 0x02	; 2
+ 58c:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <USI_TWI_Overflow_State>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:263
+		SET_USI_TO_SEND_DATA();
+ 590:	d6 9a       	sbi	0x1a, 6	; 26
+ 592:	03 c0       	rjmp	.+6      	; 0x59a <__vector_16+0xc6>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:259
+		if (TWI_TxHead != tmpTxTail) {
+			TWI_TxTail = (TWI_TxTail + 1) & TWI_TX_BUFFER_MASK;
+			USIDR      = TWI_TxBuf[TWI_TxTail];
+		} else // If the buffer is empty then:
+		{
+			SET_USI_TO_TWI_START_CONDITION_MODE();
+ 594:	d6 98       	cbi	0x1a, 6	; 26
+ 596:	88 ea       	ldi	r24, 0xA8	; 168
+ 598:	8d b9       	out	0x0d, r24	; 13
+ 59a:	80 e7       	ldi	r24, 0x70	; 112
+ 59c:	3c c0       	rjmp	.+120    	; 0x616 <__vector_16+0x142>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:268
+		SET_USI_TO_SEND_DATA();
+		break;
+
+	// Set USI to sample reply from master. Next USI_SLAVE_CHECK_REPLY_FROM_SEND_DATA
+	case USI_SLAVE_REQUEST_REPLY_FROM_SEND_DATA:
+		USI_TWI_Overflow_State = USI_SLAVE_CHECK_REPLY_FROM_SEND_DATA;
+ 59e:	83 e0       	ldi	r24, 0x03	; 3
+ 5a0:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <USI_TWI_Overflow_State>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:269
+		SET_USI_TO_READ_ACK();
+ 5a4:	d6 98       	cbi	0x1a, 6	; 26
+ 5a6:	1f b8       	out	0x0f, r1	; 15
+ 5a8:	35 c0       	rjmp	.+106    	; 0x614 <__vector_16+0x140>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:275
+		break;
+
+	// ----- Master read data mode ------
+	// Set USI to sample data from master. Next USI_SLAVE_GET_DATA_AND_SEND_ACK.
+	case USI_SLAVE_REQUEST_DATA:
+		USI_TWI_Overflow_State = USI_SLAVE_GET_DATA_AND_SEND_ACK;
+ 5aa:	85 e0       	ldi	r24, 0x05	; 5
+ 5ac:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <USI_TWI_Overflow_State>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:276
+		SET_USI_TO_READ_DATA();
+ 5b0:	d6 98       	cbi	0x1a, 6	; 26
+ 5b2:	80 e7       	ldi	r24, 0x70	; 112
+ 5b4:	8e b9       	out	0x0e, r24	; 14
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:278
+		// call slave receive callback on stop condition
+		if (USI_TWI_On_Slave_Receive) {
+ 5b6:	00 91 45 01 	lds	r16, 0x0145	; 0x800145 <USI_TWI_On_Slave_Receive>
+ 5ba:	10 91 46 01 	lds	r17, 0x0146	; 0x800146 <USI_TWI_On_Slave_Receive+0x1>
+ 5be:	01 15       	cp	r16, r1
+ 5c0:	11 05       	cpc	r17, r1
+ 5c2:	51 f1       	breq	.+84     	; 0x618 <__vector_16+0x144>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:279
+			tmpRxHead = TWI_RxHead;
+ 5c4:	c0 91 4c 01 	lds	r28, 0x014C	; 0x80014c <TWI_RxHead>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:280
+			if (TWI_RxTail != tmpRxHead) { // data in receive buffer
+ 5c8:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <TWI_RxTail>
+ 5cc:	8c 17       	cp	r24, r28
+ 5ce:	21 f1       	breq	.+72     	; 0x618 <__vector_16+0x144>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:282 (discriminator 1)
+				// check for stop Condition
+				while ((USISR & ((1 << USI_START_COND_INT) | (1 << USIPF) | (0xE << USICNT0))) == 0)
+ 5d0:	8e b1       	in	r24, 0x0e	; 14
+ 5d2:	8e 7a       	andi	r24, 0xAE	; 174
+ 5d4:	e9 f3       	breq	.-6      	; 0x5d0 <__vector_16+0xfc>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:285
+					;// wait for either Start or Stop Condition
+					// cancel after one SCL cycle
+				if (USISR & (1 << USIPF)) { // Stop Condition
+ 5d6:	75 9b       	sbis	0x0e, 5	; 14
+ 5d8:	1f c0       	rjmp	.+62     	; 0x618 <__vector_16+0x144>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:286
+					USI_TWI_On_Slave_Receive(USI_TWI_Data_In_Receive_Buffer());
+ 5da:	25 df       	rcall	.-438    	; 0x426 <USI_TWI_Data_In_Receive_Buffer>
+ 5dc:	90 e0       	ldi	r25, 0x00	; 0
+ 5de:	f8 01       	movw	r30, r16
+ 5e0:	09 95       	icall
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:288
+					// reset rx buffer
+					TWI_RxTail = tmpRxHead;
+ 5e2:	c0 93 4b 01 	sts	0x014B, r28	; 0x80014b <TWI_RxTail>
+ 5e6:	18 c0       	rjmp	.+48     	; 0x618 <__vector_16+0x144>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:297
+		break;
+
+	// Copy data from USIDR and send ACK. Next USI_SLAVE_REQUEST_DATA
+	case USI_SLAVE_GET_DATA_AND_SEND_ACK:
+		// Put data into Buffer
+		USI_TWI_Overflow_State = USI_SLAVE_REQUEST_DATA;
+ 5e8:	84 e0       	ldi	r24, 0x04	; 4
+ 5ea:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <USI_TWI_Overflow_State>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:298
+		tmpUSIDR              = USIDR; // Not necessary, but prevents warnings
+ 5ee:	9f b1       	in	r25, 0x0f	; 15
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:299
+		tmpRxHead = (TWI_RxHead + 1) & TWI_RX_BUFFER_MASK;
+ 5f0:	80 91 4c 01 	lds	r24, 0x014C	; 0x80014c <TWI_RxHead>
+ 5f4:	8f 5f       	subi	r24, 0xFF	; 255
+ 5f6:	8f 70       	andi	r24, 0x0F	; 15
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:300
+		if (TWI_RxTail != tmpRxHead) {
+ 5f8:	20 91 4b 01 	lds	r18, 0x014B	; 0x80014b <TWI_RxTail>
+ 5fc:	28 17       	cp	r18, r24
+ 5fe:	49 f0       	breq	.+18     	; 0x612 <__vector_16+0x13e>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:301
+			TWI_RxHead            = tmpRxHead;
+ 600:	80 93 4c 01 	sts	0x014C, r24	; 0x80014c <TWI_RxHead>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:302
+			TWI_RxBuf[TWI_RxHead] = tmpUSIDR;
+ 604:	e0 91 4c 01 	lds	r30, 0x014C	; 0x80014c <TWI_RxHead>
+ 608:	f0 e0       	ldi	r31, 0x00	; 0
+ 60a:	e8 5a       	subi	r30, 0xA8	; 168
+ 60c:	fe 4f       	sbci	r31, 0xFE	; 254
+ 60e:	90 83       	st	Z, r25
+ 610:	a3 cf       	rjmp	.-186    	; 0x558 <__vector_16+0x84>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:306
+			SET_USI_TO_SEND_ACK();
+		} else // If the buffer is full then:
+		{
+			SET_USI_TO_SEND_NACK();
+ 612:	d6 98       	cbi	0x1a, 6	; 26
+ 614:	8e e7       	ldi	r24, 0x7E	; 126
+ 616:	8e b9       	out	0x0e, r24	; 14
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:310
+		}
+		break;
+	}
+}
+ 618:	ff 91       	pop	r31
+ 61a:	ef 91       	pop	r30
+ 61c:	cf 91       	pop	r28
+ 61e:	bf 91       	pop	r27
+ 620:	af 91       	pop	r26
+ 622:	9f 91       	pop	r25
+ 624:	8f 91       	pop	r24
+ 626:	7f 91       	pop	r23
+ 628:	6f 91       	pop	r22
+ 62a:	5f 91       	pop	r21
+ 62c:	4f 91       	pop	r20
+ 62e:	3f 91       	pop	r19
+ 630:	2f 91       	pop	r18
+ 632:	1f 91       	pop	r17
+ 634:	0f 91       	pop	r16
+ 636:	0f 90       	pop	r0
+ 638:	0f be       	out	0x3f, r0	; 63
+ 63a:	0f 90       	pop	r0
+ 63c:	1f 90       	pop	r1
+ 63e:	18 95       	reti
+
+00000640 <Key::Key()>:
+_ZN3KeyC2Ev():
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Key.cpp:34
+*/
+#include <Key.h>
+
+
+// default constructor
+Key::Key() {
+ 640:	fc 01       	movw	r30, r24
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Key.cpp:35
+	kchar = NO_KEY;
+ 642:	10 82       	st	Z, r1
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Key.cpp:36
+	kstate = IDLE;
+ 644:	14 82       	std	Z+4, r1	; 0x04
+ 646:	13 82       	std	Z+3, r1	; 0x03
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Key.cpp:37
+	stateChanged = false;
+ 648:	15 82       	std	Z+5, r1	; 0x05
+ 64a:	08 95       	ret
+
+0000064c <Keypad::pin_read(unsigned char)>:
+_ZN6Keypad8pin_readEh():
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:244
+void Keypad::setHoldTime(uint hold) {
+    holdTime = hold;
+}
+
+void Keypad::addEventListener(void (*listener)(char)){
+	keypadEventListener = listener;
+ 64c:	86 2f       	mov	r24, r22
+ 64e:	4c c4       	rjmp	.+2200   	; 0xee8 <digitalRead>
+
+00000650 <Keypad::pin_write(unsigned char, unsigned char)>:
+_ZN6Keypad9pin_writeEhh():
+ 650:	86 2f       	mov	r24, r22
+ 652:	64 2f       	mov	r22, r20
+ 654:	0f c4       	rjmp	.+2078   	; 0xe74 <digitalWrite>
+
+00000656 <Keypad::pin_mode(unsigned char, unsigned char)>:
+_ZN6Keypad8pin_modeEhh():
+ 656:	86 2f       	mov	r24, r22
+ 658:	64 2f       	mov	r22, r20
+ 65a:	ce c3       	rjmp	.+1948   	; 0xdf8 <pinMode>
+
+0000065c <Keypad::Keypad(char*, unsigned char*, unsigned char*, unsigned char, unsigned char)>:
+_ZN6KeypadC2EPcPhS1_hh():
+ 65c:	4f 92       	push	r4
+ 65e:	5f 92       	push	r5
+ 660:	6f 92       	push	r6
+ 662:	7f 92       	push	r7
+ 664:	8f 92       	push	r8
+ 666:	9f 92       	push	r9
+ 668:	af 92       	push	r10
+ 66a:	bf 92       	push	r11
+ 66c:	cf 92       	push	r12
+ 66e:	df 92       	push	r13
+ 670:	ef 92       	push	r14
+ 672:	0f 93       	push	r16
+ 674:	cf 93       	push	r28
+ 676:	df 93       	push	r29
+ 678:	ec 01       	movw	r28, r24
+ 67a:	5b 01       	movw	r10, r22
+ 67c:	3a 01       	movw	r6, r20
+ 67e:	49 01       	movw	r8, r18
+ 680:	02 96       	adiw	r24, 0x02	; 2
+ 682:	de df       	rcall	.-68     	; 0x640 <Key::Key()>
+ 684:	8b e7       	ldi	r24, 0x7B	; 123
+ 686:	90 e0       	ldi	r25, 0x00	; 0
+ 688:	99 83       	std	Y+1, r25	; 0x01
+ 68a:	88 83       	st	Y, r24
+ 68c:	6e 01       	movw	r12, r28
+ 68e:	8c e1       	ldi	r24, 0x1C	; 28
+ 690:	c8 0e       	add	r12, r24
+ 692:	d1 1c       	adc	r13, r1
+ 694:	2e 01       	movw	r4, r28
+ 696:	88 e5       	ldi	r24, 0x58	; 88
+ 698:	48 0e       	add	r4, r24
+ 69a:	51 1c       	adc	r5, r1
+ 69c:	c6 01       	movw	r24, r12
+ 69e:	d0 df       	rcall	.-96     	; 0x640 <Key::Key()>
+ 6a0:	86 e0       	ldi	r24, 0x06	; 6
+ 6a2:	c8 0e       	add	r12, r24
+ 6a4:	d1 1c       	adc	r13, r1
+ 6a6:	c4 14       	cp	r12, r4
+ 6a8:	d5 04       	cpc	r13, r5
+ 6aa:	c1 f7       	brne	.-16     	; 0x69c <Keypad::Keypad(char*, unsigned char*, unsigned char*, unsigned char, unsigned char)+0x40>
+ 6ac:	fe 01       	movw	r30, r28
+ 6ae:	ee 59       	subi	r30, 0x9E	; 158
+ 6b0:	ff 4f       	sbci	r31, 0xFF	; 255
+ 6b2:	71 82       	std	Z+1, r7	; 0x01
+ 6b4:	60 82       	st	Z, r6
+ 6b6:	32 96       	adiw	r30, 0x02	; 2
+ 6b8:	91 82       	std	Z+1, r9	; 0x01
+ 6ba:	80 82       	st	Z, r8
+ 6bc:	32 96       	adiw	r30, 0x02	; 2
+ 6be:	00 83       	st	Z, r16
+ 6c0:	31 96       	adiw	r30, 0x01	; 1
+ 6c2:	e0 82       	st	Z, r14
+_ZN6Keypad5beginEPc():
+ 6c4:	37 97       	sbiw	r30, 0x07	; 7
+ 6c6:	b1 82       	std	Z+1, r11	; 0x01
+ 6c8:	a0 82       	st	Z, r10
+_ZN6Keypad15setDebounceTimeEj():
+ 6ca:	38 96       	adiw	r30, 0x08	; 8
+ 6cc:	8a e0       	ldi	r24, 0x0A	; 10
+ 6ce:	90 e0       	ldi	r25, 0x00	; 0
+ 6d0:	91 83       	std	Z+1, r25	; 0x01
+ 6d2:	80 83       	st	Z, r24
+_ZN6Keypad11setHoldTimeEj():
+ 6d4:	32 96       	adiw	r30, 0x02	; 2
+ 6d6:	84 ef       	ldi	r24, 0xF4	; 244
+ 6d8:	91 e0       	ldi	r25, 0x01	; 1
+ 6da:	91 83       	std	Z+1, r25	; 0x01
+ 6dc:	80 83       	st	Z, r24
+_ZN6KeypadC2EPcPhS1_hh():
+ 6de:	33 96       	adiw	r30, 0x03	; 3
+ 6e0:	11 82       	std	Z+1, r1	; 0x01
+ 6e2:	10 82       	st	Z, r1
+ 6e4:	71 97       	sbiw	r30, 0x11	; 17
+ 6e6:	10 82       	st	Z, r1
+ 6e8:	11 82       	std	Z+1, r1	; 0x01
+ 6ea:	12 82       	std	Z+2, r1	; 0x02
+ 6ec:	13 82       	std	Z+3, r1	; 0x03
+ 6ee:	c4 59       	subi	r28, 0x94	; 148
+ 6f0:	df 4f       	sbci	r29, 0xFF	; 255
+ 6f2:	18 82       	st	Y, r1
+ 6f4:	df 91       	pop	r29
+ 6f6:	cf 91       	pop	r28
+ 6f8:	0f 91       	pop	r16
+ 6fa:	ef 90       	pop	r14
+ 6fc:	df 90       	pop	r13
+ 6fe:	cf 90       	pop	r12
+ 700:	bf 90       	pop	r11
+ 702:	af 90       	pop	r10
+ 704:	9f 90       	pop	r9
+ 706:	8f 90       	pop	r8
+ 708:	7f 90       	pop	r7
+ 70a:	6f 90       	pop	r6
+ 70c:	5f 90       	pop	r5
+ 70e:	4f 90       	pop	r4
+ 710:	08 95       	ret
+
+00000712 <Keypad::scanKeys()>:
+_ZN6Keypad8scanKeysEv():
+ 712:	2f 92       	push	r2
+ 714:	3f 92       	push	r3
+ 716:	4f 92       	push	r4
+ 718:	5f 92       	push	r5
+ 71a:	6f 92       	push	r6
+ 71c:	7f 92       	push	r7
+ 71e:	8f 92       	push	r8
+ 720:	9f 92       	push	r9
+ 722:	af 92       	push	r10
+ 724:	bf 92       	push	r11
+ 726:	cf 92       	push	r12
+ 728:	df 92       	push	r13
+ 72a:	ef 92       	push	r14
+ 72c:	ff 92       	push	r15
+ 72e:	0f 93       	push	r16
+ 730:	1f 93       	push	r17
+ 732:	cf 93       	push	r28
+ 734:	df 93       	push	r29
+ 736:	cd b7       	in	r28, 0x3d	; 61
+ 738:	de b7       	in	r29, 0x3e	; 62
+ 73a:	28 97       	sbiw	r28, 0x08	; 8
+ 73c:	0f b6       	in	r0, 0x3f	; 63
+ 73e:	f8 94       	cli
+ 740:	de bf       	out	0x3e, r29	; 62
+ 742:	0f be       	out	0x3f, r0	; 63
+ 744:	cd bf       	out	0x3d, r28	; 61
+ 746:	98 87       	std	Y+8, r25	; 0x08
+ 748:	8f 83       	std	Y+7, r24	; 0x07
+ 74a:	10 e0       	ldi	r17, 0x00	; 0
+ 74c:	4c 01       	movw	r8, r24
+ 74e:	86 e6       	ldi	r24, 0x66	; 102
+ 750:	88 0e       	add	r8, r24
+ 752:	91 1c       	adc	r9, r1
+ 754:	ef 80       	ldd	r14, Y+7	; 0x07
+ 756:	f8 84       	ldd	r15, Y+8	; 0x08
+ 758:	92 e6       	ldi	r25, 0x62	; 98
+ 75a:	e9 0e       	add	r14, r25
+ 75c:	f1 1c       	adc	r15, r1
+ 75e:	d4 01       	movw	r26, r8
+ 760:	8c 91       	ld	r24, X
+ 762:	18 17       	cp	r17, r24
+ 764:	a0 f4       	brcc	.+40     	; 0x78e <Keypad::scanKeys()+0x7c>
+ 766:	af 81       	ldd	r26, Y+7	; 0x07
+ 768:	b8 85       	ldd	r27, Y+8	; 0x08
+ 76a:	8d 91       	ld	r24, X+
+ 76c:	9c 91       	ld	r25, X
+ 76e:	f7 01       	movw	r30, r14
+ 770:	a0 81       	ld	r26, Z
+ 772:	b1 81       	ldd	r27, Z+1	; 0x01
+ 774:	a1 0f       	add	r26, r17
+ 776:	b1 1d       	adc	r27, r1
+ 778:	fc 01       	movw	r30, r24
+ 77a:	20 81       	ld	r18, Z
+ 77c:	31 81       	ldd	r19, Z+1	; 0x01
+ 77e:	42 e0       	ldi	r20, 0x02	; 2
+ 780:	6c 91       	ld	r22, X
+ 782:	8f 81       	ldd	r24, Y+7	; 0x07
+ 784:	98 85       	ldd	r25, Y+8	; 0x08
+ 786:	f9 01       	movw	r30, r18
+ 788:	09 95       	icall
+ 78a:	1f 5f       	subi	r17, 0xFF	; 255
+ 78c:	e8 cf       	rjmp	.-48     	; 0x75e <Keypad::scanKeys()+0x4c>
+ 78e:	f1 2c       	mov	r15, r1
+ 790:	ef 81       	ldd	r30, Y+7	; 0x07
+ 792:	f8 85       	ldd	r31, Y+8	; 0x08
+ 794:	e9 59       	subi	r30, 0x99	; 153
+ 796:	ff 4f       	sbci	r31, 0xFF	; 255
+ 798:	fa 83       	std	Y+2, r31	; 0x02
+ 79a:	e9 83       	std	Y+1, r30	; 0x01
+ 79c:	cf 80       	ldd	r12, Y+7	; 0x07
+ 79e:	d8 84       	ldd	r13, Y+8	; 0x08
+ 7a0:	f4 e6       	ldi	r31, 0x64	; 100
+ 7a2:	cf 0e       	add	r12, r31
+ 7a4:	d1 1c       	adc	r13, r1
+ 7a6:	41 2c       	mov	r4, r1
+ 7a8:	51 2c       	mov	r5, r1
+ 7aa:	32 01       	movw	r6, r4
+ 7ac:	43 94       	inc	r4
+ 7ae:	8f 81       	ldd	r24, Y+7	; 0x07
+ 7b0:	98 85       	ldd	r25, Y+8	; 0x08
+ 7b2:	8e 59       	subi	r24, 0x9E	; 158
+ 7b4:	9f 4f       	sbci	r25, 0xFF	; 255
+ 7b6:	9c 83       	std	Y+4, r25	; 0x04
+ 7b8:	8b 83       	std	Y+3, r24	; 0x03
+ 7ba:	e9 81       	ldd	r30, Y+1	; 0x01
+ 7bc:	fa 81       	ldd	r31, Y+2	; 0x02
+ 7be:	80 81       	ld	r24, Z
+ 7c0:	f8 16       	cp	r15, r24
+ 7c2:	08 f0       	brcs	.+2      	; 0x7c6 <Keypad::scanKeys()+0xb4>
+ 7c4:	88 c0       	rjmp	.+272    	; 0x8d6 <Keypad::scanKeys()+0x1c4>
+ 7c6:	af 2c       	mov	r10, r15
+ 7c8:	b1 2c       	mov	r11, r1
+ 7ca:	af 81       	ldd	r26, Y+7	; 0x07
+ 7cc:	b8 85       	ldd	r27, Y+8	; 0x08
+ 7ce:	8d 91       	ld	r24, X+
+ 7d0:	9c 91       	ld	r25, X
+ 7d2:	f6 01       	movw	r30, r12
+ 7d4:	a0 81       	ld	r26, Z
+ 7d6:	b1 81       	ldd	r27, Z+1	; 0x01
+ 7d8:	aa 0d       	add	r26, r10
+ 7da:	bb 1d       	adc	r27, r11
+ 7dc:	fc 01       	movw	r30, r24
+ 7de:	20 81       	ld	r18, Z
+ 7e0:	31 81       	ldd	r19, Z+1	; 0x01
+ 7e2:	41 e0       	ldi	r20, 0x01	; 1
+ 7e4:	6c 91       	ld	r22, X
+ 7e6:	8f 81       	ldd	r24, Y+7	; 0x07
+ 7e8:	98 85       	ldd	r25, Y+8	; 0x08
+ 7ea:	f9 01       	movw	r30, r18
+ 7ec:	09 95       	icall
+ 7ee:	af 81       	ldd	r26, Y+7	; 0x07
+ 7f0:	b8 85       	ldd	r27, Y+8	; 0x08
+ 7f2:	8d 91       	ld	r24, X+
+ 7f4:	9c 91       	ld	r25, X
+ 7f6:	f6 01       	movw	r30, r12
+ 7f8:	a0 81       	ld	r26, Z
+ 7fa:	b1 81       	ldd	r27, Z+1	; 0x01
+ 7fc:	aa 0d       	add	r26, r10
+ 7fe:	bb 1d       	adc	r27, r11
+ 800:	fc 01       	movw	r30, r24
+ 802:	22 81       	ldd	r18, Z+2	; 0x02
+ 804:	33 81       	ldd	r19, Z+3	; 0x03
+ 806:	40 e0       	ldi	r20, 0x00	; 0
+ 808:	6c 91       	ld	r22, X
+ 80a:	8f 81       	ldd	r24, Y+7	; 0x07
+ 80c:	98 85       	ldd	r25, Y+8	; 0x08
+ 80e:	f9 01       	movw	r30, r18
+ 810:	09 95       	icall
+ 812:	d3 01       	movw	r26, r6
+ 814:	c2 01       	movw	r24, r4
+ 816:	0f 2c       	mov	r0, r15
+ 818:	04 c0       	rjmp	.+8      	; 0x822 <Keypad::scanKeys()+0x110>
+ 81a:	88 0f       	add	r24, r24
+ 81c:	99 1f       	adc	r25, r25
+ 81e:	aa 1f       	adc	r26, r26
+ 820:	bb 1f       	adc	r27, r27
+ 822:	0a 94       	dec	r0
+ 824:	d2 f7       	brpl	.-12     	; 0x81a <Keypad::scanKeys()+0x108>
+ 826:	9c 01       	movw	r18, r24
+ 828:	1c 01       	movw	r2, r24
+ 82a:	20 94       	com	r2
+ 82c:	30 94       	com	r3
+ 82e:	e1 2c       	mov	r14, r1
+ 830:	f4 01       	movw	r30, r8
+ 832:	80 81       	ld	r24, Z
+ 834:	af 81       	ldd	r26, Y+7	; 0x07
+ 836:	b8 85       	ldd	r27, Y+8	; 0x08
+ 838:	ed 91       	ld	r30, X+
+ 83a:	fc 91       	ld	r31, X
+ 83c:	e8 16       	cp	r14, r24
+ 83e:	48 f5       	brcc	.+82     	; 0x892 <Keypad::scanKeys()+0x180>
+ 840:	0e 2d       	mov	r16, r14
+ 842:	10 e0       	ldi	r17, 0x00	; 0
+ 844:	ab 81       	ldd	r26, Y+3	; 0x03
+ 846:	bc 81       	ldd	r27, Y+4	; 0x04
+ 848:	8d 91       	ld	r24, X+
+ 84a:	9c 91       	ld	r25, X
+ 84c:	dc 01       	movw	r26, r24
+ 84e:	a0 0f       	add	r26, r16
+ 850:	b1 1f       	adc	r27, r17
+ 852:	04 80       	ldd	r0, Z+4	; 0x04
+ 854:	f5 81       	ldd	r31, Z+5	; 0x05
+ 856:	e0 2d       	mov	r30, r0
+ 858:	6c 91       	ld	r22, X
+ 85a:	8f 81       	ldd	r24, Y+7	; 0x07
+ 85c:	98 85       	ldd	r25, Y+8	; 0x08
+ 85e:	2d 83       	std	Y+5, r18	; 0x05
+ 860:	3e 83       	std	Y+6, r19	; 0x06
+ 862:	09 95       	icall
+ 864:	00 0f       	add	r16, r16
+ 866:	11 1f       	adc	r17, r17
+ 868:	2d 81       	ldd	r18, Y+5	; 0x05
+ 86a:	3e 81       	ldd	r19, Y+6	; 0x06
+ 86c:	ef 81       	ldd	r30, Y+7	; 0x07
+ 86e:	f8 85       	ldd	r31, Y+8	; 0x08
+ 870:	e0 0f       	add	r30, r16
+ 872:	f1 1f       	adc	r31, r17
+ 874:	89 2b       	or	r24, r25
+ 876:	29 f4       	brne	.+10     	; 0x882 <Keypad::scanKeys()+0x170>
+ 878:	80 85       	ldd	r24, Z+8	; 0x08
+ 87a:	91 85       	ldd	r25, Z+9	; 0x09
+ 87c:	82 2b       	or	r24, r18
+ 87e:	93 2b       	or	r25, r19
+ 880:	04 c0       	rjmp	.+8      	; 0x88a <Keypad::scanKeys()+0x178>
+ 882:	80 85       	ldd	r24, Z+8	; 0x08
+ 884:	91 85       	ldd	r25, Z+9	; 0x09
+ 886:	82 21       	and	r24, r2
+ 888:	93 21       	and	r25, r3
+ 88a:	91 87       	std	Z+9, r25	; 0x09
+ 88c:	80 87       	std	Z+8, r24	; 0x08
+ 88e:	e3 94       	inc	r14
+ 890:	cf cf       	rjmp	.-98     	; 0x830 <Keypad::scanKeys()+0x11e>
+ 892:	d6 01       	movw	r26, r12
+ 894:	8d 91       	ld	r24, X+
+ 896:	9c 91       	ld	r25, X
+ 898:	dc 01       	movw	r26, r24
+ 89a:	aa 0d       	add	r26, r10
+ 89c:	bb 1d       	adc	r27, r11
+ 89e:	02 80       	ldd	r0, Z+2	; 0x02
+ 8a0:	f3 81       	ldd	r31, Z+3	; 0x03
+ 8a2:	e0 2d       	mov	r30, r0
+ 8a4:	41 e0       	ldi	r20, 0x01	; 1
+ 8a6:	6c 91       	ld	r22, X
+ 8a8:	8f 81       	ldd	r24, Y+7	; 0x07
+ 8aa:	98 85       	ldd	r25, Y+8	; 0x08
+ 8ac:	09 95       	icall
+ 8ae:	af 81       	ldd	r26, Y+7	; 0x07
+ 8b0:	b8 85       	ldd	r27, Y+8	; 0x08
+ 8b2:	ed 91       	ld	r30, X+
+ 8b4:	fc 91       	ld	r31, X
+ 8b6:	d6 01       	movw	r26, r12
+ 8b8:	8d 91       	ld	r24, X+
+ 8ba:	9c 91       	ld	r25, X
+ 8bc:	dc 01       	movw	r26, r24
+ 8be:	aa 0d       	add	r26, r10
+ 8c0:	bb 1d       	adc	r27, r11
+ 8c2:	01 90       	ld	r0, Z+
+ 8c4:	f0 81       	ld	r31, Z
+ 8c6:	e0 2d       	mov	r30, r0
+ 8c8:	40 e0       	ldi	r20, 0x00	; 0
+ 8ca:	6c 91       	ld	r22, X
+ 8cc:	8f 81       	ldd	r24, Y+7	; 0x07
+ 8ce:	98 85       	ldd	r25, Y+8	; 0x08
+ 8d0:	09 95       	icall
+ 8d2:	f3 94       	inc	r15
+ 8d4:	72 cf       	rjmp	.-284    	; 0x7ba <Keypad::scanKeys()+0xa8>
+ 8d6:	28 96       	adiw	r28, 0x08	; 8
+ 8d8:	0f b6       	in	r0, 0x3f	; 63
+ 8da:	f8 94       	cli
+ 8dc:	de bf       	out	0x3e, r29	; 62
+ 8de:	0f be       	out	0x3f, r0	; 63
+ 8e0:	cd bf       	out	0x3d, r28	; 61
+ 8e2:	df 91       	pop	r29
+ 8e4:	cf 91       	pop	r28
+ 8e6:	1f 91       	pop	r17
+ 8e8:	0f 91       	pop	r16
+ 8ea:	ff 90       	pop	r15
+ 8ec:	ef 90       	pop	r14
+ 8ee:	df 90       	pop	r13
+ 8f0:	cf 90       	pop	r12
+ 8f2:	bf 90       	pop	r11
+ 8f4:	af 90       	pop	r10
+ 8f6:	9f 90       	pop	r9
+ 8f8:	8f 90       	pop	r8
+ 8fa:	7f 90       	pop	r7
+ 8fc:	6f 90       	pop	r6
+ 8fe:	5f 90       	pop	r5
+ 900:	4f 90       	pop	r4
+ 902:	3f 90       	pop	r3
+ 904:	2f 90       	pop	r2
+ 906:	08 95       	ret
+
+00000908 <Keypad::findInList(int)>:
+_ZN6Keypad10findInListEi():
+ 908:	fc 01       	movw	r30, r24
+ 90a:	80 e0       	ldi	r24, 0x00	; 0
+ 90c:	90 e0       	ldi	r25, 0x00	; 0
+ 90e:	25 8d       	ldd	r18, Z+29	; 0x1d
+ 910:	36 8d       	ldd	r19, Z+30	; 0x1e
+ 912:	26 17       	cp	r18, r22
+ 914:	37 07       	cpc	r19, r23
+ 916:	39 f0       	breq	.+14     	; 0x926 <Keypad::findInList(int)+0x1e>
+ 918:	01 96       	adiw	r24, 0x01	; 1
+ 91a:	36 96       	adiw	r30, 0x06	; 6
+ 91c:	8a 30       	cpi	r24, 0x0A	; 10
+ 91e:	91 05       	cpc	r25, r1
+ 920:	b1 f7       	brne	.-20     	; 0x90e <Keypad::findInList(int)+0x6>
+ 922:	8f ef       	ldi	r24, 0xFF	; 255
+ 924:	9f ef       	ldi	r25, 0xFF	; 255
+ 926:	08 95       	ret
+
+00000928 <Keypad::transitionTo(unsigned char, KeyState)>:
+_ZN6Keypad12transitionToEh8KeyState():
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:247
+}
+
+void Keypad::transitionTo(byte idx, KeyState nextState) {
+ 928:	0f 93       	push	r16
+ 92a:	1f 93       	push	r17
+ 92c:	cf 93       	push	r28
+ 92e:	dc 01       	movw	r26, r24
+ 930:	c6 2f       	mov	r28, r22
+ 932:	8a 01       	movw	r16, r20
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:248
+	key[idx].kstate = nextState;
+ 934:	26 2f       	mov	r18, r22
+ 936:	30 e0       	ldi	r19, 0x00	; 0
+ 938:	c9 01       	movw	r24, r18
+ 93a:	66 e0       	ldi	r22, 0x06	; 6
+ 93c:	70 e0       	ldi	r23, 0x00	; 0
+ 93e:	04 d3       	rcall	.+1544   	; 0xf48 <__mulhi3>
+ 940:	fd 01       	movw	r30, r26
+ 942:	e8 0f       	add	r30, r24
+ 944:	f9 1f       	adc	r31, r25
+ 946:	10 a3       	std	Z+32, r17	; 0x20
+ 948:	07 8f       	std	Z+31, r16	; 0x1f
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:249
+	key[idx].stateChanged = true;
+ 94a:	81 e0       	ldi	r24, 0x01	; 1
+ 94c:	81 a3       	std	Z+33, r24	; 0x21
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:253
+
+	// Sketch used the getKey() function.
+	// Calls keypadEventListener only when the first key in slot 0 changes state.
+	if (single_key)  {
+ 94e:	fd 01       	movw	r30, r26
+ 950:	e4 59       	subi	r30, 0x94	; 148
+ 952:	ff 4f       	sbci	r31, 0xFF	; 255
+ 954:	80 81       	ld	r24, Z
+ 956:	31 96       	adiw	r30, 0x01	; 1
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:254
+	  	if ( (keypadEventListener!=NULL) && (idx==0) )  {
+ 958:	01 90       	ld	r0, Z+
+ 95a:	f0 81       	ld	r31, Z
+ 95c:	e0 2d       	mov	r30, r0
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:253
+	key[idx].kstate = nextState;
+	key[idx].stateChanged = true;
+
+	// Sketch used the getKey() function.
+	// Calls keypadEventListener only when the first key in slot 0 changes state.
+	if (single_key)  {
+ 95e:	88 23       	and	r24, r24
+ 960:	29 f0       	breq	.+10     	; 0x96c <Keypad::transitionTo(unsigned char, KeyState)+0x44>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:254
+	  	if ( (keypadEventListener!=NULL) && (idx==0) )  {
+ 962:	30 97       	sbiw	r30, 0x00	; 0
+ 964:	89 f0       	breq	.+34     	; 0x988 <Keypad::transitionTo(unsigned char, KeyState)+0x60>
+ 966:	c1 11       	cpse	r28, r1
+ 968:	0f c0       	rjmp	.+30     	; 0x988 <Keypad::transitionTo(unsigned char, KeyState)+0x60>
+ 96a:	08 c0       	rjmp	.+16     	; 0x97c <Keypad::transitionTo(unsigned char, KeyState)+0x54>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:261
+		}
+	}
+	// Sketch used the getKeys() function.
+	// Calls keypadEventListener on any key that changes state.
+	else {
+	  	if (keypadEventListener!=NULL)  {
+ 96c:	30 97       	sbiw	r30, 0x00	; 0
+ 96e:	61 f0       	breq	.+24     	; 0x988 <Keypad::transitionTo(unsigned char, KeyState)+0x60>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:262
+			keypadEventListener(key[idx].kchar);
+ 970:	c9 01       	movw	r24, r18
+ 972:	66 e0       	ldi	r22, 0x06	; 6
+ 974:	70 e0       	ldi	r23, 0x00	; 0
+ 976:	e8 d2       	rcall	.+1488   	; 0xf48 <__mulhi3>
+ 978:	a8 0f       	add	r26, r24
+ 97a:	b9 1f       	adc	r27, r25
+ 97c:	5c 96       	adiw	r26, 0x1c	; 28
+ 97e:	8c 91       	ld	r24, X
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:265
+		}
+	}
+}
+ 980:	cf 91       	pop	r28
+ 982:	1f 91       	pop	r17
+ 984:	0f 91       	pop	r16
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:262
+	}
+	// Sketch used the getKeys() function.
+	// Calls keypadEventListener on any key that changes state.
+	else {
+	  	if (keypadEventListener!=NULL)  {
+			keypadEventListener(key[idx].kchar);
+ 986:	09 94       	ijmp
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:265
+		}
+	}
+}
+ 988:	cf 91       	pop	r28
+ 98a:	1f 91       	pop	r17
+ 98c:	0f 91       	pop	r16
+ 98e:	08 95       	ret
+
+00000990 <Keypad::nextKeyState(unsigned char, unsigned char)>:
+_ZN6Keypad12nextKeyStateEhh():
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:152
+	return anyActivity;
+}
+
+// Private
+// This function is a state machine but is also used for debouncing the keys.
+void Keypad::nextKeyState(byte idx, boolean button) {
+ 990:	6f 92       	push	r6
+ 992:	7f 92       	push	r7
+ 994:	8f 92       	push	r8
+ 996:	9f 92       	push	r9
+ 998:	af 92       	push	r10
+ 99a:	bf 92       	push	r11
+ 99c:	cf 92       	push	r12
+ 99e:	df 92       	push	r13
+ 9a0:	ef 92       	push	r14
+ 9a2:	ff 92       	push	r15
+ 9a4:	1f 93       	push	r17
+ 9a6:	cf 93       	push	r28
+ 9a8:	df 93       	push	r29
+ 9aa:	1f 92       	push	r1
+ 9ac:	cd b7       	in	r28, 0x3d	; 61
+ 9ae:	de b7       	in	r29, 0x3e	; 62
+ 9b0:	3c 01       	movw	r6, r24
+ 9b2:	16 2f       	mov	r17, r22
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:153
+	key[idx].stateChanged = false;
+ 9b4:	86 2f       	mov	r24, r22
+ 9b6:	90 e0       	ldi	r25, 0x00	; 0
+ 9b8:	66 e0       	ldi	r22, 0x06	; 6
+ 9ba:	70 e0       	ldi	r23, 0x00	; 0
+ 9bc:	c5 d2       	rcall	.+1418   	; 0xf48 <__mulhi3>
+ 9be:	f3 01       	movw	r30, r6
+ 9c0:	e8 0f       	add	r30, r24
+ 9c2:	f9 1f       	adc	r31, r25
+ 9c4:	11 a2       	std	Z+33, r1	; 0x21
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:155
+
+	switch (key[idx].kstate) {
+ 9c6:	87 8d       	ldd	r24, Z+31	; 0x1f
+ 9c8:	90 a1       	ldd	r25, Z+32	; 0x20
+ 9ca:	81 30       	cpi	r24, 0x01	; 1
+ 9cc:	91 05       	cpc	r25, r1
+ 9ce:	f1 f0       	breq	.+60     	; 0xa0c <Keypad::nextKeyState(unsigned char, unsigned char)+0x7c>
+ 9d0:	1c f4       	brge	.+6      	; 0x9d8 <Keypad::nextKeyState(unsigned char, unsigned char)+0x48>
+ 9d2:	89 2b       	or	r24, r25
+ 9d4:	51 f0       	breq	.+20     	; 0x9ea <Keypad::nextKeyState(unsigned char, unsigned char)+0x5a>
+ 9d6:	4c c0       	rjmp	.+152    	; 0xa70 <Keypad::nextKeyState(unsigned char, unsigned char)+0xe0>
+ 9d8:	82 30       	cpi	r24, 0x02	; 2
+ 9da:	91 05       	cpc	r25, r1
+ 9dc:	a1 f1       	breq	.+104    	; 0xa46 <Keypad::nextKeyState(unsigned char, unsigned char)+0xb6>
+ 9de:	03 97       	sbiw	r24, 0x03	; 3
+ 9e0:	09 f0       	breq	.+2      	; 0x9e4 <Keypad::nextKeyState(unsigned char, unsigned char)+0x54>
+ 9e2:	46 c0       	rjmp	.+140    	; 0xa70 <Keypad::nextKeyState(unsigned char, unsigned char)+0xe0>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:172
+		case HOLD:
+			if (button==OPEN)
+				transitionTo (idx, RELEASED);
+			break;
+		case RELEASED:
+			transitionTo (idx, IDLE);
+ 9e4:	40 e0       	ldi	r20, 0x00	; 0
+ 9e6:	50 e0       	ldi	r21, 0x00	; 0
+ 9e8:	32 c0       	rjmp	.+100    	; 0xa4e <Keypad::nextKeyState(unsigned char, unsigned char)+0xbe>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:157
+void Keypad::nextKeyState(byte idx, boolean button) {
+	key[idx].stateChanged = false;
+
+	switch (key[idx].kstate) {
+		case IDLE:
+			if (button==CLOSED) {
+ 9ea:	41 30       	cpi	r20, 0x01	; 1
+ 9ec:	09 f0       	breq	.+2      	; 0x9f0 <Keypad::nextKeyState(unsigned char, unsigned char)+0x60>
+ 9ee:	40 c0       	rjmp	.+128    	; 0xa70 <Keypad::nextKeyState(unsigned char, unsigned char)+0xe0>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:158
+				transitionTo (idx, PRESSED);
+ 9f0:	41 e0       	ldi	r20, 0x01	; 1
+ 9f2:	50 e0       	ldi	r21, 0x00	; 0
+ 9f4:	61 2f       	mov	r22, r17
+ 9f6:	c3 01       	movw	r24, r6
+ 9f8:	97 df       	rcall	.-210    	; 0x928 <Keypad::transitionTo(unsigned char, KeyState)>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:159
+				holdTimer = millis(); }		// Get ready for next HOLD state.
+ 9fa:	bb d1       	rcall	.+886    	; 0xd72 <millis>
+ 9fc:	f3 01       	movw	r30, r6
+ 9fe:	e8 5a       	subi	r30, 0xA8	; 168
+ a00:	ff 4f       	sbci	r31, 0xFF	; 255
+ a02:	60 83       	st	Z, r22
+ a04:	71 83       	std	Z+1, r23	; 0x01
+ a06:	82 83       	std	Z+2, r24	; 0x02
+ a08:	93 83       	std	Z+3, r25	; 0x03
+ a0a:	32 c0       	rjmp	.+100    	; 0xa70 <Keypad::nextKeyState(unsigned char, unsigned char)+0xe0>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:162
+			break;
+		case PRESSED:
+			if ((millis()-holdTimer)>holdTime)	// Waiting for a key HOLD...
+ a0c:	49 83       	std	Y+1, r20	; 0x01
+ a0e:	b1 d1       	rcall	.+866    	; 0xd72 <millis>
+ a10:	f3 01       	movw	r30, r6
+ a12:	e8 5a       	subi	r30, 0xA8	; 168
+ a14:	ff 4f       	sbci	r31, 0xFF	; 255
+ a16:	c0 80       	ld	r12, Z
+ a18:	d1 80       	ldd	r13, Z+1	; 0x01
+ a1a:	e2 80       	ldd	r14, Z+2	; 0x02
+ a1c:	f3 80       	ldd	r15, Z+3	; 0x03
+ a1e:	4b 01       	movw	r8, r22
+ a20:	5c 01       	movw	r10, r24
+ a22:	8c 18       	sub	r8, r12
+ a24:	9d 08       	sbc	r9, r13
+ a26:	ae 08       	sbc	r10, r14
+ a28:	bf 08       	sbc	r11, r15
+ a2a:	72 96       	adiw	r30, 0x12	; 18
+ a2c:	80 81       	ld	r24, Z
+ a2e:	91 81       	ldd	r25, Z+1	; 0x01
+ a30:	a0 e0       	ldi	r26, 0x00	; 0
+ a32:	b0 e0       	ldi	r27, 0x00	; 0
+ a34:	49 81       	ldd	r20, Y+1	; 0x01
+ a36:	88 15       	cp	r24, r8
+ a38:	99 05       	cpc	r25, r9
+ a3a:	aa 05       	cpc	r26, r10
+ a3c:	bb 05       	cpc	r27, r11
+ a3e:	18 f4       	brcc	.+6      	; 0xa46 <Keypad::nextKeyState(unsigned char, unsigned char)+0xb6>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:163
+				transitionTo (idx, HOLD);
+ a40:	42 e0       	ldi	r20, 0x02	; 2
+ a42:	50 e0       	ldi	r21, 0x00	; 0
+ a44:	04 c0       	rjmp	.+8      	; 0xa4e <Keypad::nextKeyState(unsigned char, unsigned char)+0xbe>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:164
+			else if (button==OPEN)				// or for a key to be RELEASED.
+ a46:	41 11       	cpse	r20, r1
+ a48:	13 c0       	rjmp	.+38     	; 0xa70 <Keypad::nextKeyState(unsigned char, unsigned char)+0xe0>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:165
+				transitionTo (idx, RELEASED);
+ a4a:	43 e0       	ldi	r20, 0x03	; 3
+ a4c:	50 e0       	ldi	r21, 0x00	; 0
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:172
+		case HOLD:
+			if (button==OPEN)
+				transitionTo (idx, RELEASED);
+			break;
+		case RELEASED:
+			transitionTo (idx, IDLE);
+ a4e:	61 2f       	mov	r22, r17
+ a50:	c3 01       	movw	r24, r6
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:175
+			break;
+	}
+}
+ a52:	0f 90       	pop	r0
+ a54:	df 91       	pop	r29
+ a56:	cf 91       	pop	r28
+ a58:	1f 91       	pop	r17
+ a5a:	ff 90       	pop	r15
+ a5c:	ef 90       	pop	r14
+ a5e:	df 90       	pop	r13
+ a60:	cf 90       	pop	r12
+ a62:	bf 90       	pop	r11
+ a64:	af 90       	pop	r10
+ a66:	9f 90       	pop	r9
+ a68:	8f 90       	pop	r8
+ a6a:	7f 90       	pop	r7
+ a6c:	6f 90       	pop	r6
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:172
+		case HOLD:
+			if (button==OPEN)
+				transitionTo (idx, RELEASED);
+			break;
+		case RELEASED:
+			transitionTo (idx, IDLE);
+ a6e:	5c cf       	rjmp	.-328    	; 0x928 <Keypad::transitionTo(unsigned char, KeyState)>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:175
+			break;
+	}
+}
+ a70:	0f 90       	pop	r0
+ a72:	df 91       	pop	r29
+ a74:	cf 91       	pop	r28
+ a76:	1f 91       	pop	r17
+ a78:	ff 90       	pop	r15
+ a7a:	ef 90       	pop	r14
+ a7c:	df 90       	pop	r13
+ a7e:	cf 90       	pop	r12
+ a80:	bf 90       	pop	r11
+ a82:	af 90       	pop	r10
+ a84:	9f 90       	pop	r9
+ a86:	8f 90       	pop	r8
+ a88:	7f 90       	pop	r7
+ a8a:	6f 90       	pop	r6
+ a8c:	08 95       	ret
+
+00000a8e <Keypad::updateList()>:
+_ZN6Keypad10updateListEv():
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:103
+		pin_mode(columnPins[c],INPUT);
+	}
+}
+
+// Manage the list without rearranging the keys. Returns true if any keys on the list changed state.
+bool Keypad::updateList() {
+ a8e:	3f 92       	push	r3
+ a90:	4f 92       	push	r4
+ a92:	5f 92       	push	r5
+ a94:	6f 92       	push	r6
+ a96:	7f 92       	push	r7
+ a98:	8f 92       	push	r8
+ a9a:	9f 92       	push	r9
+ a9c:	af 92       	push	r10
+ a9e:	bf 92       	push	r11
+ aa0:	cf 92       	push	r12
+ aa2:	df 92       	push	r13
+ aa4:	ef 92       	push	r14
+ aa6:	ff 92       	push	r15
+ aa8:	0f 93       	push	r16
+ aaa:	1f 93       	push	r17
+ aac:	cf 93       	push	r28
+ aae:	df 93       	push	r29
+ ab0:	00 d0       	rcall	.+0      	; 0xab2 <Keypad::updateList()+0x24>
+ ab2:	1f 92       	push	r1
+ ab4:	cd b7       	in	r28, 0x3d	; 61
+ ab6:	de b7       	in	r29, 0x3e	; 62
+ ab8:	9b 83       	std	Y+3, r25	; 0x03
+ aba:	8a 83       	std	Y+2, r24	; 0x02
+ abc:	fc 01       	movw	r30, r24
+ abe:	7c 96       	adiw	r30, 0x1c	; 28
+ ac0:	88 5a       	subi	r24, 0xA8	; 168
+ ac2:	9f 4f       	sbci	r25, 0xFF	; 255
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:111
+
+	// Delete any IDLE keys
+	for (byte i=0; i<LIST_MAX; i++) {
+		if (key[i].kstate==IDLE) {
+			key[i].kchar = NO_KEY;
+			key[i].kcode = -1;
+ ac4:	2f ef       	ldi	r18, 0xFF	; 255
+ ac6:	3f ef       	ldi	r19, 0xFF	; 255
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:109
+
+	bool anyActivity = false;
+
+	// Delete any IDLE keys
+	for (byte i=0; i<LIST_MAX; i++) {
+		if (key[i].kstate==IDLE) {
+ ac8:	43 81       	ldd	r20, Z+3	; 0x03
+ aca:	54 81       	ldd	r21, Z+4	; 0x04
+ acc:	45 2b       	or	r20, r21
+ ace:	21 f4       	brne	.+8      	; 0xad8 <Keypad::updateList()+0x4a>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:110
+			key[i].kchar = NO_KEY;
+ ad0:	10 82       	st	Z, r1
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:111
+			key[i].kcode = -1;
+ ad2:	32 83       	std	Z+2, r19	; 0x02
+ ad4:	21 83       	std	Z+1, r18	; 0x01
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:112
+			key[i].stateChanged = false;
+ ad6:	15 82       	std	Z+5, r1	; 0x05
+ ad8:	36 96       	adiw	r30, 0x06	; 6
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:108 (discriminator 2)
+bool Keypad::updateList() {
+
+	bool anyActivity = false;
+
+	// Delete any IDLE keys
+	for (byte i=0; i<LIST_MAX; i++) {
+ ada:	e8 17       	cp	r30, r24
+ adc:	f9 07       	cpc	r31, r25
+ ade:	a1 f7       	brne	.-24     	; 0xac8 <Keypad::updateList()+0x3a>
+ ae0:	41 2c       	mov	r4, r1
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:117
+			key[i].stateChanged = false;
+		}
+	}
+
+	// Add new keys to empty slots in the key list.
+	for (byte r=0; r<sizeKpd.rows; r++) {
+ ae2:	ca 80       	ldd	r12, Y+2	; 0x02
+ ae4:	db 80       	ldd	r13, Y+3	; 0x03
+ ae6:	26 e6       	ldi	r18, 0x66	; 102
+ ae8:	c2 0e       	add	r12, r18
+ aea:	d1 1c       	adc	r13, r1
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:118
+		for (byte c=0; c<sizeKpd.columns; c++) {
+ aec:	aa 80       	ldd	r10, Y+2	; 0x02
+ aee:	bb 80       	ldd	r11, Y+3	; 0x03
+ af0:	87 e6       	ldi	r24, 0x67	; 103
+ af2:	a8 0e       	add	r10, r24
+ af4:	b1 1c       	adc	r11, r1
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:120
+			boolean button = bitRead(bitMap[r],c);
+			char keyChar = keymap[r * sizeKpd.columns + c];
+ af6:	8a 80       	ldd	r8, Y+2	; 0x02
+ af8:	9b 80       	ldd	r9, Y+3	; 0x03
+ afa:	90 e6       	ldi	r25, 0x60	; 96
+ afc:	89 0e       	add	r8, r25
+ afe:	91 1c       	adc	r9, r1
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:117 (discriminator 1)
+			key[i].stateChanged = false;
+		}
+	}
+
+	// Add new keys to empty slots in the key list.
+	for (byte r=0; r<sizeKpd.rows; r++) {
+ b00:	f6 01       	movw	r30, r12
+ b02:	80 81       	ld	r24, Z
+ b04:	48 16       	cp	r4, r24
+ b06:	08 f0       	brcs	.+2      	; 0xb0a <Keypad::updateList()+0x7c>
+ b08:	5a c0       	rjmp	.+180    	; 0xbbe <Keypad::updateList()+0x130>
+ b0a:	51 2c       	mov	r5, r1
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:119
+		for (byte c=0; c<sizeKpd.columns; c++) {
+			boolean button = bitRead(bitMap[r],c);
+ b0c:	e4 2c       	mov	r14, r4
+ b0e:	f1 2c       	mov	r15, r1
+ b10:	87 01       	movw	r16, r14
+ b12:	0c 5f       	subi	r16, 0xFC	; 252
+ b14:	1f 4f       	sbci	r17, 0xFF	; 255
+ b16:	00 0f       	add	r16, r16
+ b18:	11 1f       	adc	r17, r17
+ b1a:	ea 81       	ldd	r30, Y+2	; 0x02
+ b1c:	fb 81       	ldd	r31, Y+3	; 0x03
+ b1e:	0e 0f       	add	r16, r30
+ b20:	1f 1f       	adc	r17, r31
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:118 (discriminator 1)
+		}
+	}
+
+	// Add new keys to empty slots in the key list.
+	for (byte r=0; r<sizeKpd.rows; r++) {
+		for (byte c=0; c<sizeKpd.columns; c++) {
+ b22:	d5 01       	movw	r26, r10
+ b24:	6c 91       	ld	r22, X
+ b26:	56 16       	cp	r5, r22
+ b28:	08 f0       	brcs	.+2      	; 0xb2c <Keypad::updateList()+0x9e>
+ b2a:	47 c0       	rjmp	.+142    	; 0xbba <Keypad::updateList()+0x12c>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:119
+			boolean button = bitRead(bitMap[r],c);
+ b2c:	d8 01       	movw	r26, r16
+ b2e:	4d 91       	ld	r20, X+
+ b30:	5c 91       	ld	r21, X
+ b32:	05 2c       	mov	r0, r5
+ b34:	02 c0       	rjmp	.+4      	; 0xb3a <Keypad::updateList()+0xac>
+ b36:	56 95       	lsr	r21
+ b38:	47 95       	ror	r20
+ b3a:	0a 94       	dec	r0
+ b3c:	e2 f7       	brpl	.-8      	; 0xb36 <Keypad::updateList()+0xa8>
+ b3e:	41 70       	andi	r20, 0x01	; 1
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:120
+			char keyChar = keymap[r * sizeKpd.columns + c];
+ b40:	70 e0       	ldi	r23, 0x00	; 0
+ b42:	c7 01       	movw	r24, r14
+ b44:	01 d2       	rcall	.+1026   	; 0xf48 <__mulhi3>
+ b46:	3c 01       	movw	r6, r24
+ b48:	65 0c       	add	r6, r5
+ b4a:	71 1c       	adc	r7, r1
+ b4c:	d4 01       	movw	r26, r8
+ b4e:	ed 91       	ld	r30, X+
+ b50:	fc 91       	ld	r31, X
+ b52:	e6 0d       	add	r30, r6
+ b54:	f7 1d       	adc	r31, r7
+ b56:	30 80       	ld	r3, Z
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:122
+			int keyCode = r * sizeKpd.columns + c;
+			int idx = findInList (keyCode);
+ b58:	b3 01       	movw	r22, r6
+ b5a:	8a 81       	ldd	r24, Y+2	; 0x02
+ b5c:	9b 81       	ldd	r25, Y+3	; 0x03
+ b5e:	49 83       	std	Y+1, r20	; 0x01
+ b60:	d3 de       	rcall	.-602    	; 0x908 <Keypad::findInList(int)>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:124
+			// Key is already on the list so set its next state.
+			if (idx > -1)	{
+ b62:	49 81       	ldd	r20, Y+1	; 0x01
+ b64:	97 fd       	sbrc	r25, 7
+ b66:	02 c0       	rjmp	.+4      	; 0xb6c <Keypad::updateList()+0xde>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:125
+				nextKeyState(idx, button);
+ b68:	68 2f       	mov	r22, r24
+ b6a:	1c c0       	rjmp	.+56     	; 0xba4 <Keypad::updateList()+0x116>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:128
+			}
+			// Key is NOT on the list so add it.
+			if ((idx == -1) && button) {
+ b6c:	01 96       	adiw	r24, 0x01	; 1
+ b6e:	19 f5       	brne	.+70     	; 0xbb6 <Keypad::updateList()+0x128>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:128 (discriminator 1)
+ b70:	44 23       	and	r20, r20
+ b72:	09 f1       	breq	.+66     	; 0xbb6 <Keypad::updateList()+0x128>
+ b74:	20 e0       	ldi	r18, 0x00	; 0
+ b76:	30 e0       	ldi	r19, 0x00	; 0
+ b78:	c9 01       	movw	r24, r18
+ b7a:	66 e0       	ldi	r22, 0x06	; 6
+ b7c:	70 e0       	ldi	r23, 0x00	; 0
+ b7e:	e4 d1       	rcall	.+968    	; 0xf48 <__mulhi3>
+ b80:	ea 81       	ldd	r30, Y+2	; 0x02
+ b82:	fb 81       	ldd	r31, Y+3	; 0x03
+ b84:	e8 0f       	add	r30, r24
+ b86:	f9 1f       	adc	r31, r25
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:130
+				for (byte i=0; i<LIST_MAX; i++) {
+					if (key[i].kchar==NO_KEY) {		// Find an empty slot or don't add key to list.
+ b88:	44 8d       	ldd	r20, Z+28	; 0x1c
+ b8a:	41 11       	cpse	r20, r1
+ b8c:	0f c0       	rjmp	.+30     	; 0xbac <Keypad::updateList()+0x11e>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:131
+						key[i].kchar = keyChar;
+ b8e:	34 8e       	std	Z+28, r3	; 0x1c
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:132
+						key[i].kcode = keyCode;
+ b90:	76 8e       	std	Z+30, r7	; 0x1e
+ b92:	65 8e       	std	Z+29, r6	; 0x1d
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:133
+						key[i].kstate = IDLE;		// Keys NOT on the list have an initial state of IDLE.
+ b94:	ea 81       	ldd	r30, Y+2	; 0x02
+ b96:	fb 81       	ldd	r31, Y+3	; 0x03
+ b98:	e8 0f       	add	r30, r24
+ b9a:	f9 1f       	adc	r31, r25
+ b9c:	10 a2       	std	Z+32, r1	; 0x20
+ b9e:	17 8e       	std	Z+31, r1	; 0x1f
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:134
+						nextKeyState (i, button);
+ ba0:	41 e0       	ldi	r20, 0x01	; 1
+ ba2:	62 2f       	mov	r22, r18
+ ba4:	8a 81       	ldd	r24, Y+2	; 0x02
+ ba6:	9b 81       	ldd	r25, Y+3	; 0x03
+ ba8:	f3 de       	rcall	.-538    	; 0x990 <Keypad::nextKeyState(unsigned char, unsigned char)>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:135
+						break;	// Don't fill all the empty slots with the same key.
+ baa:	05 c0       	rjmp	.+10     	; 0xbb6 <Keypad::updateList()+0x128>
+ bac:	2f 5f       	subi	r18, 0xFF	; 255
+ bae:	3f 4f       	sbci	r19, 0xFF	; 255
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:129 (discriminator 2)
+			if (idx > -1)	{
+				nextKeyState(idx, button);
+			}
+			// Key is NOT on the list so add it.
+			if ((idx == -1) && button) {
+				for (byte i=0; i<LIST_MAX; i++) {
+ bb0:	2a 30       	cpi	r18, 0x0A	; 10
+ bb2:	31 05       	cpc	r19, r1
+ bb4:	09 f7       	brne	.-62     	; 0xb78 <Keypad::updateList()+0xea>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:118 (discriminator 2)
+		}
+	}
+
+	// Add new keys to empty slots in the key list.
+	for (byte r=0; r<sizeKpd.rows; r++) {
+		for (byte c=0; c<sizeKpd.columns; c++) {
+ bb6:	53 94       	inc	r5
+ bb8:	b4 cf       	rjmp	.-152    	; 0xb22 <Keypad::updateList()+0x94>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:117 (discriminator 2)
+			key[i].stateChanged = false;
+		}
+	}
+
+	// Add new keys to empty slots in the key list.
+	for (byte r=0; r<sizeKpd.rows; r++) {
+ bba:	43 94       	inc	r4
+ bbc:	a1 cf       	rjmp	.-190    	; 0xb00 <Keypad::updateList()+0x72>
+ bbe:	ea 81       	ldd	r30, Y+2	; 0x02
+ bc0:	fb 81       	ldd	r31, Y+3	; 0x03
+ bc2:	b1 96       	adiw	r30, 0x21	; 33
+ bc4:	2a 81       	ldd	r18, Y+2	; 0x02
+ bc6:	3b 81       	ldd	r19, Y+3	; 0x03
+ bc8:	23 5a       	subi	r18, 0xA3	; 163
+ bca:	3f 4f       	sbci	r19, 0xFF	; 255
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:117
+ bcc:	80 e0       	ldi	r24, 0x00	; 0
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:144
+		}
+	}
+
+	// Report if the user changed the state of any key.
+	for (byte i=0; i<LIST_MAX; i++) {
+		if (key[i].stateChanged) anyActivity = true;
+ bce:	90 81       	ld	r25, Z
+ bd0:	91 11       	cpse	r25, r1
+ bd2:	81 e0       	ldi	r24, 0x01	; 1
+ bd4:	36 96       	adiw	r30, 0x06	; 6
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:143 (discriminator 2)
+			}
+		}
+	}
+
+	// Report if the user changed the state of any key.
+	for (byte i=0; i<LIST_MAX; i++) {
+ bd6:	e2 17       	cp	r30, r18
+ bd8:	f3 07       	cpc	r31, r19
+ bda:	c9 f7       	brne	.-14     	; 0xbce <Keypad::updateList()+0x140>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:148
+		if (key[i].stateChanged) anyActivity = true;
+	}
+
+	return anyActivity;
+}
+ bdc:	0f 90       	pop	r0
+ bde:	0f 90       	pop	r0
+ be0:	0f 90       	pop	r0
+ be2:	df 91       	pop	r29
+ be4:	cf 91       	pop	r28
+ be6:	1f 91       	pop	r17
+ be8:	0f 91       	pop	r16
+ bea:	ff 90       	pop	r15
+ bec:	ef 90       	pop	r14
+ bee:	df 90       	pop	r13
+ bf0:	cf 90       	pop	r12
+ bf2:	bf 90       	pop	r11
+ bf4:	af 90       	pop	r10
+ bf6:	9f 90       	pop	r9
+ bf8:	8f 90       	pop	r8
+ bfa:	7f 90       	pop	r7
+ bfc:	6f 90       	pop	r6
+ bfe:	5f 90       	pop	r5
+ c00:	4f 90       	pop	r4
+ c02:	3f 90       	pop	r3
+ c04:	08 95       	ret
+
+00000c06 <Keypad::getKeys()>:
+_ZN6Keypad7getKeysEv():
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:69
+
+	return NO_KEY;
+}
+
+// Populate the key list.
+bool Keypad::getKeys() {
+ c06:	cf 92       	push	r12
+ c08:	df 92       	push	r13
+ c0a:	ef 92       	push	r14
+ c0c:	ff 92       	push	r15
+ c0e:	0f 93       	push	r16
+ c10:	1f 93       	push	r17
+ c12:	cf 93       	push	r28
+ c14:	df 93       	push	r29
+ c16:	ec 01       	movw	r28, r24
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:73
+	bool keyActivity = false;
+
+	// Limit how often the keypad is scanned. This makes the loop() run 10 times as fast.
+	if ( (millis()-startTime)>debounceTime ) {
+ c18:	ac d0       	rcall	.+344    	; 0xd72 <millis>
+ c1a:	8e 01       	movw	r16, r28
+ c1c:	04 5a       	subi	r16, 0xA4	; 164
+ c1e:	1f 4f       	sbci	r17, 0xFF	; 255
+ c20:	f8 01       	movw	r30, r16
+ c22:	c0 80       	ld	r12, Z
+ c24:	d1 80       	ldd	r13, Z+1	; 0x01
+ c26:	e2 80       	ldd	r14, Z+2	; 0x02
+ c28:	f3 80       	ldd	r15, Z+3	; 0x03
+ c2a:	ab 01       	movw	r20, r22
+ c2c:	bc 01       	movw	r22, r24
+ c2e:	4c 19       	sub	r20, r12
+ c30:	5d 09       	sbc	r21, r13
+ c32:	6e 09       	sbc	r22, r14
+ c34:	7f 09       	sbc	r23, r15
+ c36:	3c 96       	adiw	r30, 0x0c	; 12
+ c38:	80 81       	ld	r24, Z
+ c3a:	91 81       	ldd	r25, Z+1	; 0x01
+ c3c:	a0 e0       	ldi	r26, 0x00	; 0
+ c3e:	b0 e0       	ldi	r27, 0x00	; 0
+ c40:	84 17       	cp	r24, r20
+ c42:	95 07       	cpc	r25, r21
+ c44:	a6 07       	cpc	r26, r22
+ c46:	b7 07       	cpc	r27, r23
+ c48:	60 f4       	brcc	.+24     	; 0xc62 <Keypad::getKeys()+0x5c>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:74
+		scanKeys();
+ c4a:	ce 01       	movw	r24, r28
+ c4c:	62 dd       	rcall	.-1340   	; 0x712 <Keypad::scanKeys()>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:75
+		keyActivity = updateList();
+ c4e:	ce 01       	movw	r24, r28
+ c50:	1e df       	rcall	.-452    	; 0xa8e <Keypad::updateList()>
+ c52:	c8 2f       	mov	r28, r24
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:76
+		startTime = millis();
+ c54:	8e d0       	rcall	.+284    	; 0xd72 <millis>
+ c56:	f8 01       	movw	r30, r16
+ c58:	60 83       	st	Z, r22
+ c5a:	71 83       	std	Z+1, r23	; 0x01
+ c5c:	82 83       	std	Z+2, r24	; 0x02
+ c5e:	93 83       	std	Z+3, r25	; 0x03
+ c60:	01 c0       	rjmp	.+2      	; 0xc64 <Keypad::getKeys()+0x5e>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:70
+	return NO_KEY;
+}
+
+// Populate the key list.
+bool Keypad::getKeys() {
+	bool keyActivity = false;
+ c62:	c0 e0       	ldi	r28, 0x00	; 0
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:80
+		keyActivity = updateList();
+		startTime = millis();
+	}
+
+	return keyActivity;
+}
+ c64:	8c 2f       	mov	r24, r28
+ c66:	df 91       	pop	r29
+ c68:	cf 91       	pop	r28
+ c6a:	1f 91       	pop	r17
+ c6c:	0f 91       	pop	r16
+ c6e:	ff 90       	pop	r15
+ c70:	ef 90       	pop	r14
+ c72:	df 90       	pop	r13
+ c74:	cf 90       	pop	r12
+ c76:	08 95       	ret
+
+00000c78 <Keypad::getKey()>:
+_ZN6Keypad6getKeyEv():
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:57
+void Keypad::begin(char *userKeymap) {
+    keymap = userKeymap;
+}
+
+// Returns a single key only. Retained for backwards compatibility.
+char Keypad::getKey() {
+ c78:	0f 93       	push	r16
+ c7a:	1f 93       	push	r17
+ c7c:	cf 93       	push	r28
+ c7e:	df 93       	push	r29
+ c80:	ec 01       	movw	r28, r24
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:58
+	single_key = true;
+ c82:	8c 01       	movw	r16, r24
+ c84:	04 59       	subi	r16, 0x94	; 148
+ c86:	1f 4f       	sbci	r17, 0xFF	; 255
+ c88:	81 e0       	ldi	r24, 0x01	; 1
+ c8a:	f8 01       	movw	r30, r16
+ c8c:	80 83       	st	Z, r24
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:60
+
+	if (getKeys() && key[0].stateChanged && (key[0].kstate==PRESSED))
+ c8e:	ce 01       	movw	r24, r28
+ c90:	ba df       	rcall	.-140    	; 0xc06 <Keypad::getKeys()>
+ c92:	88 23       	and	r24, r24
+ c94:	49 f0       	breq	.+18     	; 0xca8 <Keypad::getKey()+0x30>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:60 (discriminator 1)
+ c96:	89 a1       	ldd	r24, Y+33	; 0x21
+ c98:	88 23       	and	r24, r24
+ c9a:	31 f0       	breq	.+12     	; 0xca8 <Keypad::getKey()+0x30>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:60 (discriminator 3)
+ c9c:	8f 8d       	ldd	r24, Y+31	; 0x1f
+ c9e:	98 a1       	ldd	r25, Y+32	; 0x20
+ ca0:	01 97       	sbiw	r24, 0x01	; 1
+ ca2:	11 f4       	brne	.+4      	; 0xca8 <Keypad::getKey()+0x30>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:61
+		return key[0].kchar;
+ ca4:	8c 8d       	ldd	r24, Y+28	; 0x1c
+ ca6:	03 c0       	rjmp	.+6      	; 0xcae <Keypad::getKey()+0x36>
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:63
+	
+	single_key = false;
+ ca8:	f8 01       	movw	r30, r16
+ caa:	10 82       	st	Z, r1
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:65
+
+	return NO_KEY;
+ cac:	80 e0       	ldi	r24, 0x00	; 0
+C:\Users\andrea.devore\Documents\Arduino\libraries\Keypad\src/Keypad.cpp:66
+}
+ cae:	df 91       	pop	r29
+ cb0:	cf 91       	pop	r28
+ cb2:	1f 91       	pop	r17
+ cb4:	0f 91       	pop	r16
+ cb6:	08 95       	ret
+
+00000cb8 <initToneTimerInternal>:
+initToneTimerInternal():
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring.c:590
+PLLCSR |= PCKE;
+}
+#endif
+  #if INITIALIZE_SECONDARY_TIMERS
+  // Prepare the timer for PWM
+    initToneTimerInternal();
+ cb8:	8e b5       	in	r24, 0x2e	; 46
+ cba:	88 7f       	andi	r24, 0xF8	; 248
+ cbc:	8e bd       	out	0x2e, r24	; 46
+ cbe:	8f b5       	in	r24, 0x2f	; 47
+ cc0:	81 60       	ori	r24, 0x01	; 1
+ cc2:	8f bd       	out	0x2f, r24	; 47
+ cc4:	8f b5       	in	r24, 0x2f	; 47
+ cc6:	8d 7f       	andi	r24, 0xFD	; 253
+ cc8:	8f bd       	out	0x2f, r24	; 47
+ cca:	8e b5       	in	r24, 0x2e	; 46
+ ccc:	87 7f       	andi	r24, 0xF7	; 247
+ cce:	8e bd       	out	0x2e, r24	; 46
+ cd0:	8e b5       	in	r24, 0x2e	; 46
+ cd2:	8f 7e       	andi	r24, 0xEF	; 239
+ cd4:	8e bd       	out	0x2e, r24	; 46
+ cd6:	8e b5       	in	r24, 0x2e	; 46
+ cd8:	83 60       	ori	r24, 0x03	; 3
+ cda:	8e bd       	out	0x2e, r24	; 46
+ cdc:	08 95       	ret
+
+00000cde <__vector_11>:
+__vector_11():
+ cde:	1f 92       	push	r1
+ ce0:	0f 92       	push	r0
+ ce2:	0f b6       	in	r0, 0x3f	; 63
+ ce4:	0f 92       	push	r0
+ ce6:	11 24       	eor	r1, r1
+ ce8:	2f 93       	push	r18
+ cea:	3f 93       	push	r19
+ cec:	8f 93       	push	r24
+ cee:	9f 93       	push	r25
+ cf0:	af 93       	push	r26
+ cf2:	bf 93       	push	r27
+ cf4:	80 91 50 01 	lds	r24, 0x0150	; 0x800150 <millis_timer_millis>
+ cf8:	90 91 51 01 	lds	r25, 0x0151	; 0x800151 <millis_timer_millis+0x1>
+ cfc:	a0 91 52 01 	lds	r26, 0x0152	; 0x800152 <millis_timer_millis+0x2>
+ d00:	b0 91 53 01 	lds	r27, 0x0153	; 0x800153 <millis_timer_millis+0x3>
+ d04:	30 91 4f 01 	lds	r19, 0x014F	; 0x80014f <millis_timer_fract>
+ d08:	26 e0       	ldi	r18, 0x06	; 6
+ d0a:	23 0f       	add	r18, r19
+ d0c:	2d 37       	cpi	r18, 0x7D	; 125
+ d0e:	30 f0       	brcs	.+12     	; 0xd1c <__vector_11+0x3e>
+ d10:	29 e8       	ldi	r18, 0x89	; 137
+ d12:	23 0f       	add	r18, r19
+ d14:	03 96       	adiw	r24, 0x03	; 3
+ d16:	a1 1d       	adc	r26, r1
+ d18:	b1 1d       	adc	r27, r1
+ d1a:	03 c0       	rjmp	.+6      	; 0xd22 <__vector_11+0x44>
+ d1c:	02 96       	adiw	r24, 0x02	; 2
+ d1e:	a1 1d       	adc	r26, r1
+ d20:	b1 1d       	adc	r27, r1
+ d22:	20 93 4f 01 	sts	0x014F, r18	; 0x80014f <millis_timer_fract>
+ d26:	80 93 50 01 	sts	0x0150, r24	; 0x800150 <millis_timer_millis>
+ d2a:	90 93 51 01 	sts	0x0151, r25	; 0x800151 <millis_timer_millis+0x1>
+ d2e:	a0 93 52 01 	sts	0x0152, r26	; 0x800152 <millis_timer_millis+0x2>
+ d32:	b0 93 53 01 	sts	0x0153, r27	; 0x800153 <millis_timer_millis+0x3>
+ d36:	80 91 54 01 	lds	r24, 0x0154	; 0x800154 <millis_timer_overflow_count>
+ d3a:	90 91 55 01 	lds	r25, 0x0155	; 0x800155 <millis_timer_overflow_count+0x1>
+ d3e:	a0 91 56 01 	lds	r26, 0x0156	; 0x800156 <millis_timer_overflow_count+0x2>
+ d42:	b0 91 57 01 	lds	r27, 0x0157	; 0x800157 <millis_timer_overflow_count+0x3>
+ d46:	01 96       	adiw	r24, 0x01	; 1
+ d48:	a1 1d       	adc	r26, r1
+ d4a:	b1 1d       	adc	r27, r1
+ d4c:	80 93 54 01 	sts	0x0154, r24	; 0x800154 <millis_timer_overflow_count>
+ d50:	90 93 55 01 	sts	0x0155, r25	; 0x800155 <millis_timer_overflow_count+0x1>
+ d54:	a0 93 56 01 	sts	0x0156, r26	; 0x800156 <millis_timer_overflow_count+0x2>
+ d58:	b0 93 57 01 	sts	0x0157, r27	; 0x800157 <millis_timer_overflow_count+0x3>
+ d5c:	bf 91       	pop	r27
+ d5e:	af 91       	pop	r26
+ d60:	9f 91       	pop	r25
+ d62:	8f 91       	pop	r24
+ d64:	3f 91       	pop	r19
+ d66:	2f 91       	pop	r18
+ d68:	0f 90       	pop	r0
+ d6a:	0f be       	out	0x3f, r0	; 63
+ d6c:	0f 90       	pop	r0
+ d6e:	1f 90       	pop	r1
+ d70:	18 95       	reti
+
+00000d72 <millis>:
+millis():
+ d72:	2f b7       	in	r18, 0x3f	; 63
+ d74:	f8 94       	cli
+ d76:	60 91 50 01 	lds	r22, 0x0150	; 0x800150 <millis_timer_millis>
+ d7a:	70 91 51 01 	lds	r23, 0x0151	; 0x800151 <millis_timer_millis+0x1>
+ d7e:	80 91 52 01 	lds	r24, 0x0152	; 0x800152 <millis_timer_millis+0x2>
+ d82:	90 91 53 01 	lds	r25, 0x0153	; 0x800153 <millis_timer_millis+0x3>
+ d86:	2f bf       	out	0x3f, r18	; 63
+ d88:	08 95       	ret
+
+00000d8a <init>:
+init():
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring.c:753
+  #endif
+  #endif
+
+  // Use the Millis Timer for fast PWM (unless it doesn't have an output).
+  #if (TIMER_TO_USE_FOR_MILLIS == 0) && defined(WGM01)
+  sbi(TCCR0A, WGM01);
+ d8a:	80 b7       	in	r24, 0x30	; 48
+ d8c:	82 60       	ori	r24, 0x02	; 2
+ d8e:	80 bf       	out	0x30, r24	; 48
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring.c:754
+  sbi(TCCR0A, WGM00);
+ d90:	80 b7       	in	r24, 0x30	; 48
+ d92:	81 60       	ori	r24, 0x01	; 1
+ d94:	80 bf       	out	0x30, r24	; 48
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring.c:777
+  #endif
+  
+  // Millis timer is always processor clock divided by MillisTimer_Prescale_Value (64)
+  #if (TIMER_TO_USE_FOR_MILLIS == 0)
+   #ifdef TCCR0B
+    TCCR0B = (TCCR0B & ~((1<<CS02)|(1<<CS01)|(1<<CS00))) | (MillisTimer_Prescale_Index << CS00);
+ d96:	83 b7       	in	r24, 0x33	; 51
+ d98:	88 7f       	andi	r24, 0xF8	; 248
+ d9a:	83 60       	ori	r24, 0x03	; 3
+ d9c:	83 bf       	out	0x33, r24	; 51
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring.c:789
+  TCCR1B = (TCCR1B & ~((1<<CS13)|(1<<CS12)|(1<<CS11)|(1<<CS10))) | (MillisTimer_Prescale_Index << CS10);
+  #elif (TIMER_TO_USE_FOR_MILLIS == 1)
+  TCCR1B = (TCCR1B & ~((1<<CS12)|(1<<CS11)|(1<<CS10))) | (MillisTimer_Prescale_Index << CS10);
+  #endif
+  // this needs to be called before setup() or some functions won't work there
+  sei();
+ d9e:	78 94       	sei
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring.c:795
+  
+  // Enable the overlow interrupt (this is the basic system tic-toc for millis)
+  #if defined(TIMSK) && defined(TOIE0) && (TIMER_TO_USE_FOR_MILLIS == 0)
+  sbi(TIMSK, TOIE0);
+  #elif defined(TIMSK0) && defined(TOIE0) && (TIMER_TO_USE_FOR_MILLIS == 0)
+  sbi(TIMSK0, TOIE0);
+ da0:	89 b7       	in	r24, 0x39	; 57
+ da2:	81 60       	ori	r24, 0x01	; 1
+ da4:	89 bf       	out	0x39, r24	; 57
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring.c:806
+  #error Millis() Timer overflow interrupt not set correctly
+  #endif
+  
+  // Initialize the timer used for Tone
+  #if INITIALIZE_SECONDARY_TIMERS
+    initToneTimerInternal();
+ da6:	88 df       	rcall	.-240    	; 0xcb8 <initToneTimerInternal>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring.c:813
+
+  // Initialize the ADC
+  #if defined( INITIALIZE_ANALOG_TO_DIGITAL_CONVERTER ) && INITIALIZE_ANALOG_TO_DIGITAL_CONVERTER
+  #if defined(ADCSRA)
+    // set a2d prescale factor
+	ADCSRA = (ADCSRA & ~((1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0))) | (ADC_ARDUINO_PRESCALER << ADPS0) | (1<<ADEN);
+ da8:	86 b1       	in	r24, 0x06	; 6
+ daa:	88 77       	andi	r24, 0x78	; 120
+ dac:	86 68       	ori	r24, 0x86	; 134
+ dae:	86 b9       	out	0x06, r24	; 6
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring.c:815
+    // enable a2d conversions
+    sbi(ADCSRA, ADEN);
+ db0:	37 9a       	sbi	0x06, 7	; 6
+ db2:	08 95       	ret
+
+00000db4 <turnOffPWM>:
+turnOffPWM():
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:67
+}
+
+static void turnOffPWM(uint8_t timer)
+{
+	#if defined(TCCR0A) && defined(COM0A1)
+	if( timer == TIMER0A){
+ db4:	81 30       	cpi	r24, 0x01	; 1
+ db6:	31 f4       	brne	.+12     	; 0xdc4 <turnOffPWM+0x10>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:68
+		cbi(TCCR0A, COM0A1);
+ db8:	80 b7       	in	r24, 0x30	; 48
+ dba:	8f 77       	andi	r24, 0x7F	; 127
+ dbc:	80 bf       	out	0x30, r24	; 48
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:69
+		cbi(TCCR0A, COM0A0);
+ dbe:	80 b7       	in	r24, 0x30	; 48
+ dc0:	8f 7b       	andi	r24, 0xBF	; 191
+ dc2:	07 c0       	rjmp	.+14     	; 0xdd2 <turnOffPWM+0x1e>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:74
+	} else
+	#endif
+
+	#if defined(TCCR0A) && defined(COM0B1)
+	if( timer == TIMER0B){
+ dc4:	82 30       	cpi	r24, 0x02	; 2
+ dc6:	39 f4       	brne	.+14     	; 0xdd6 <turnOffPWM+0x22>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:75
+		cbi(TCCR0A, COM0B1);
+ dc8:	80 b7       	in	r24, 0x30	; 48
+ dca:	8f 7d       	andi	r24, 0xDF	; 223
+ dcc:	80 bf       	out	0x30, r24	; 48
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:76
+		cbi(TCCR0A, COM0B0);
+ dce:	80 b7       	in	r24, 0x30	; 48
+ dd0:	8f 7e       	andi	r24, 0xEF	; 239
+ dd2:	80 bf       	out	0x30, r24	; 48
+ dd4:	08 95       	ret
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:81
+	} else
+	#endif
+
+	#if defined(TCCR1A) && defined(COM1A1)
+	if( timer == TIMER1A){
+ dd6:	83 30       	cpi	r24, 0x03	; 3
+ dd8:	31 f4       	brne	.+12     	; 0xde6 <turnOffPWM+0x32>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:82
+		cbi(TCCR1A, COM1A1);
+ dda:	8f b5       	in	r24, 0x2f	; 47
+ ddc:	8f 77       	andi	r24, 0x7F	; 127
+ dde:	8f bd       	out	0x2f, r24	; 47
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:83
+		cbi(TCCR1A, COM1A0);
+ de0:	8f b5       	in	r24, 0x2f	; 47
+ de2:	8f 7b       	andi	r24, 0xBF	; 191
+ de4:	07 c0       	rjmp	.+14     	; 0xdf4 <turnOffPWM+0x40>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:115
+	#endif
+	} else
+	#endif
+
+	#if defined(TCCR1A) && defined(COM1B1)
+	if( timer == TIMER1B){
+ de6:	84 30       	cpi	r24, 0x04	; 4
+ de8:	31 f4       	brne	.+12     	; 0xdf6 <turnOffPWM+0x42>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:116
+		cbi(TCCR1A, COM1B1);
+ dea:	8f b5       	in	r24, 0x2f	; 47
+ dec:	8f 7d       	andi	r24, 0xDF	; 223
+ dee:	8f bd       	out	0x2f, r24	; 47
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:117
+		cbi(TCCR1A, COM1B0);
+ df0:	8f b5       	in	r24, 0x2f	; 47
+ df2:	8f 7e       	andi	r24, 0xEF	; 239
+ df4:	8f bd       	out	0x2f, r24	; 47
+ df6:	08 95       	ret
+
+00000df8 <pinMode>:
+pinMode():
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:33
+#define ARDUINO_MAIN
+#include "wiring_private.h"
+#include "pins_arduino.h"
+
+void pinMode(uint8_t pin, uint8_t mode)
+{
+ df8:	cf 93       	push	r28
+ dfa:	df 93       	push	r29
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:34
+	if (pin&128) {pin=analogInputToDigitalPin((pin&127));}
+ dfc:	87 fd       	sbrc	r24, 7
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:34 (discriminator 1)
+ dfe:	8f 77       	andi	r24, 0x7F	; 127
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:35
+	uint8_t bit = digitalPinToBitMask(pin);
+ e00:	90 e0       	ldi	r25, 0x00	; 0
+ e02:	fc 01       	movw	r30, r24
+ e04:	e2 5d       	subi	r30, 0xD2	; 210
+ e06:	ff 4f       	sbci	r31, 0xFF	; 255
+ e08:	24 91       	lpm	r18, Z
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:36
+	uint8_t port = digitalPinToPort(pin);
+ e0a:	fc 01       	movw	r30, r24
+ e0c:	e6 5c       	subi	r30, 0xC6	; 198
+ e0e:	ff 4f       	sbci	r31, 0xFF	; 255
+ e10:	84 91       	lpm	r24, Z
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:39
+	volatile uint8_t *reg, *out;
+
+	if (port == NOT_A_PIN) return;
+ e12:	88 23       	and	r24, r24
+ e14:	61 f1       	breq	.+88     	; 0xe6e <pinMode+0x76>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:41
+
+	reg = portModeRegister(port);
+ e16:	90 e0       	ldi	r25, 0x00	; 0
+ e18:	88 0f       	add	r24, r24
+ e1a:	99 1f       	adc	r25, r25
+ e1c:	fc 01       	movw	r30, r24
+ e1e:	ee 5a       	subi	r30, 0xAE	; 174
+ e20:	ff 4f       	sbci	r31, 0xFF	; 255
+ e22:	c5 91       	lpm	r28, Z+
+ e24:	d4 91       	lpm	r29, Z
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:42
+	out = portOutputRegister(port);
+ e26:	fc 01       	movw	r30, r24
+ e28:	e4 5b       	subi	r30, 0xB4	; 180
+ e2a:	ff 4f       	sbci	r31, 0xFF	; 255
+ e2c:	a5 91       	lpm	r26, Z+
+ e2e:	b4 91       	lpm	r27, Z
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:44
+
+	if (mode == INPUT) { 
+ e30:	61 11       	cpse	r22, r1
+ e32:	09 c0       	rjmp	.+18     	; 0xe46 <pinMode+0x4e>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:45
+		uint8_t oldSREG = SREG;
+ e34:	9f b7       	in	r25, 0x3f	; 63
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:46
+                cli();
+ e36:	f8 94       	cli
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:47
+		*reg &= ~bit;
+ e38:	88 81       	ld	r24, Y
+ e3a:	20 95       	com	r18
+ e3c:	82 23       	and	r24, r18
+ e3e:	88 83       	st	Y, r24
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:48
+		*out &= ~bit;
+ e40:	ec 91       	ld	r30, X
+ e42:	2e 23       	and	r18, r30
+ e44:	0b c0       	rjmp	.+22     	; 0xe5c <pinMode+0x64>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:50
+		SREG = oldSREG;
+	} else if (mode == INPUT_PULLUP) {
+ e46:	62 30       	cpi	r22, 0x02	; 2
+ e48:	61 f4       	brne	.+24     	; 0xe62 <pinMode+0x6a>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:51
+		uint8_t oldSREG = SREG;
+ e4a:	9f b7       	in	r25, 0x3f	; 63
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:52
+                cli();
+ e4c:	f8 94       	cli
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:53
+		*reg &= ~bit;
+ e4e:	38 81       	ld	r19, Y
+ e50:	82 2f       	mov	r24, r18
+ e52:	80 95       	com	r24
+ e54:	83 23       	and	r24, r19
+ e56:	88 83       	st	Y, r24
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:54
+		*out |= bit;
+ e58:	ec 91       	ld	r30, X
+ e5a:	2e 2b       	or	r18, r30
+ e5c:	2c 93       	st	X, r18
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:55
+		SREG = oldSREG;
+ e5e:	9f bf       	out	0x3f, r25	; 63
+ e60:	06 c0       	rjmp	.+12     	; 0xe6e <pinMode+0x76>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:57
+	} else {
+		uint8_t oldSREG = SREG;
+ e62:	8f b7       	in	r24, 0x3f	; 63
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:58
+                cli();
+ e64:	f8 94       	cli
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:59
+		*reg |= bit;
+ e66:	e8 81       	ld	r30, Y
+ e68:	2e 2b       	or	r18, r30
+ e6a:	28 83       	st	Y, r18
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:60
+		SREG = oldSREG;
+ e6c:	8f bf       	out	0x3f, r24	; 63
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:62
+	}
+}
+ e6e:	df 91       	pop	r29
+ e70:	cf 91       	pop	r28
+ e72:	08 95       	ret
+
+00000e74 <digitalWrite>:
+digitalWrite():
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:137
+    }
+
+}
+
+void digitalWrite(uint8_t pin, uint8_t val)
+{
+ e74:	0f 93       	push	r16
+ e76:	1f 93       	push	r17
+ e78:	cf 93       	push	r28
+ e7a:	df 93       	push	r29
+ e7c:	1f 92       	push	r1
+ e7e:	cd b7       	in	r28, 0x3d	; 61
+ e80:	de b7       	in	r29, 0x3e	; 62
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:138
+	if (pin&128) {pin=analogInputToDigitalPin((pin&127));}
+ e82:	87 fd       	sbrc	r24, 7
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:138 (discriminator 1)
+ e84:	8f 77       	andi	r24, 0x7F	; 127
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:139
+	uint8_t timer = digitalPinToTimer(pin);
+ e86:	28 2f       	mov	r18, r24
+ e88:	30 e0       	ldi	r19, 0x00	; 0
+ e8a:	f9 01       	movw	r30, r18
+ e8c:	ee 5d       	subi	r30, 0xDE	; 222
+ e8e:	ff 4f       	sbci	r31, 0xFF	; 255
+ e90:	84 91       	lpm	r24, Z
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:140
+	uint8_t bit = digitalPinToBitMask(pin);
+ e92:	f9 01       	movw	r30, r18
+ e94:	e2 5d       	subi	r30, 0xD2	; 210
+ e96:	ff 4f       	sbci	r31, 0xFF	; 255
+ e98:	14 91       	lpm	r17, Z
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:141
+	uint8_t port = digitalPinToPort(pin);
+ e9a:	f9 01       	movw	r30, r18
+ e9c:	e6 5c       	subi	r30, 0xC6	; 198
+ e9e:	ff 4f       	sbci	r31, 0xFF	; 255
+ ea0:	04 91       	lpm	r16, Z
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:144
+	volatile uint8_t *out;
+
+	if (port == NOT_A_PIN) return;
+ ea2:	00 23       	and	r16, r16
+ ea4:	d9 f0       	breq	.+54     	; 0xedc <digitalWrite+0x68>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:148
+
+	// If the pin that support PWM output, we need to turn it off
+	// before doing a digital write.
+	if (timer != NOT_ON_TIMER) turnOffPWM(timer);
+ ea6:	88 23       	and	r24, r24
+ ea8:	19 f0       	breq	.+6      	; 0xeb0 <digitalWrite+0x3c>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:148 (discriminator 1)
+ eaa:	69 83       	std	Y+1, r22	; 0x01
+ eac:	83 df       	rcall	.-250    	; 0xdb4 <turnOffPWM>
+ eae:	69 81       	ldd	r22, Y+1	; 0x01
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:150
+
+	out = portOutputRegister(port);
+ eb0:	e0 2f       	mov	r30, r16
+ eb2:	f0 e0       	ldi	r31, 0x00	; 0
+ eb4:	ee 0f       	add	r30, r30
+ eb6:	ff 1f       	adc	r31, r31
+ eb8:	e4 5b       	subi	r30, 0xB4	; 180
+ eba:	ff 4f       	sbci	r31, 0xFF	; 255
+ ebc:	a5 91       	lpm	r26, Z+
+ ebe:	b4 91       	lpm	r27, Z
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:153
+
+	if (val == LOW) {
+		uint8_t oldSREG = SREG;
+ ec0:	8f b7       	in	r24, 0x3f	; 63
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:152
+	// before doing a digital write.
+	if (timer != NOT_ON_TIMER) turnOffPWM(timer);
+
+	out = portOutputRegister(port);
+
+	if (val == LOW) {
+ ec2:	61 11       	cpse	r22, r1
+ ec4:	06 c0       	rjmp	.+12     	; 0xed2 <digitalWrite+0x5e>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:154
+		uint8_t oldSREG = SREG;
+    cli();
+ ec6:	f8 94       	cli
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:155
+		*out &= ~bit;
+ ec8:	9c 91       	ld	r25, X
+ eca:	e1 2f       	mov	r30, r17
+ ecc:	e0 95       	com	r30
+ ece:	e9 23       	and	r30, r25
+ ed0:	03 c0       	rjmp	.+6      	; 0xed8 <digitalWrite+0x64>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:159
+		SREG = oldSREG;
+	} else {
+		uint8_t oldSREG = SREG;
+    cli();
+ ed2:	f8 94       	cli
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:160
+		*out |= bit;
+ ed4:	ec 91       	ld	r30, X
+ ed6:	e1 2b       	or	r30, r17
+ ed8:	ec 93       	st	X, r30
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:161
+		SREG = oldSREG;
+ eda:	8f bf       	out	0x3f, r24	; 63
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:163
+	}
+}
+ edc:	0f 90       	pop	r0
+ ede:	df 91       	pop	r29
+ ee0:	cf 91       	pop	r28
+ ee2:	1f 91       	pop	r17
+ ee4:	0f 91       	pop	r16
+ ee6:	08 95       	ret
+
+00000ee8 <digitalRead>:
+digitalRead():
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:166
+
+int digitalRead(uint8_t pin)
+{
+ ee8:	cf 93       	push	r28
+ eea:	df 93       	push	r29
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:167
+	if (pin&128) {pin=analogInputToDigitalPin((pin&127));}
+ eec:	87 fd       	sbrc	r24, 7
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:167 (discriminator 1)
+ eee:	8f 77       	andi	r24, 0x7F	; 127
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:168
+	uint8_t timer = digitalPinToTimer(pin);
+ ef0:	28 2f       	mov	r18, r24
+ ef2:	30 e0       	ldi	r19, 0x00	; 0
+ ef4:	f9 01       	movw	r30, r18
+ ef6:	ee 5d       	subi	r30, 0xDE	; 222
+ ef8:	ff 4f       	sbci	r31, 0xFF	; 255
+ efa:	84 91       	lpm	r24, Z
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:169
+	uint8_t bit = digitalPinToBitMask(pin);
+ efc:	f9 01       	movw	r30, r18
+ efe:	e2 5d       	subi	r30, 0xD2	; 210
+ f00:	ff 4f       	sbci	r31, 0xFF	; 255
+ f02:	d4 91       	lpm	r29, Z
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:170
+	uint8_t port = digitalPinToPort(pin);
+ f04:	f9 01       	movw	r30, r18
+ f06:	e6 5c       	subi	r30, 0xC6	; 198
+ f08:	ff 4f       	sbci	r31, 0xFF	; 255
+ f0a:	c4 91       	lpm	r28, Z
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:172
+
+	if (port == NOT_A_PIN) return LOW;
+ f0c:	cc 23       	and	r28, r28
+ f0e:	89 f0       	breq	.+34     	; 0xf32 <digitalRead+0x4a>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:176
+
+	// If the pin that support PWM output, we need to turn it off
+	// before getting a digital reading.
+	if (timer != NOT_ON_TIMER) turnOffPWM(timer);
+ f10:	81 11       	cpse	r24, r1
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:176 (discriminator 1)
+ f12:	50 df       	rcall	.-352    	; 0xdb4 <turnOffPWM>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:178
+
+	if (*portInputRegister(port) & bit) return HIGH;
+ f14:	ec 2f       	mov	r30, r28
+ f16:	f0 e0       	ldi	r31, 0x00	; 0
+ f18:	ee 0f       	add	r30, r30
+ f1a:	ff 1f       	adc	r31, r31
+ f1c:	ea 5b       	subi	r30, 0xBA	; 186
+ f1e:	ff 4f       	sbci	r31, 0xFF	; 255
+ f20:	a5 91       	lpm	r26, Z+
+ f22:	b4 91       	lpm	r27, Z
+ f24:	ec 91       	ld	r30, X
+ f26:	ed 23       	and	r30, r29
+ f28:	81 e0       	ldi	r24, 0x01	; 1
+ f2a:	90 e0       	ldi	r25, 0x00	; 0
+ f2c:	21 f4       	brne	.+8      	; 0xf36 <digitalRead+0x4e>
+ f2e:	80 e0       	ldi	r24, 0x00	; 0
+ f30:	02 c0       	rjmp	.+4      	; 0xf36 <digitalRead+0x4e>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:172
+	if (pin&128) {pin=analogInputToDigitalPin((pin&127));}
+	uint8_t timer = digitalPinToTimer(pin);
+	uint8_t bit = digitalPinToBitMask(pin);
+	uint8_t port = digitalPinToPort(pin);
+
+	if (port == NOT_A_PIN) return LOW;
+ f32:	80 e0       	ldi	r24, 0x00	; 0
+ f34:	90 e0       	ldi	r25, 0x00	; 0
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/wiring_digital.c:180
+	// before getting a digital reading.
+	if (timer != NOT_ON_TIMER) turnOffPWM(timer);
+
+	if (*portInputRegister(port) & bit) return HIGH;
+	return LOW;
+}
+ f36:	df 91       	pop	r29
+ f38:	cf 91       	pop	r28
+ f3a:	08 95       	ret
+
+00000f3c <main>:
+main():
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/main.cpp:6
+#include <Arduino.h>
+
+int main(void)
+{
+	#ifdef TUNED_OSCCAL_VALUE
+	OSCCAL = TUNED_OSCCAL_VALUE; //set the oscillator calibration value based on the pins_arduino.h file. If this is not set, it will be optimised away
+ f3c:	81 b7       	in	r24, 0x31	; 49
+ f3e:	81 bf       	out	0x31, r24	; 49
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/main.cpp:8
+    #endif
+    init();
+ f40:	24 df       	rcall	.-440    	; 0xd8a <init>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/main.cpp:10
+
+	setup();
+ f42:	7d d9       	rcall	.-3334   	; 0x23e <setup>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/main.cpp:13 (discriminator 1)
+    
+	for (;;)
+		loop();
+ f44:	b0 d8       	rcall	.-3744   	; 0xa6 <loop>
+C:\Users\andrea.devore\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.2.3\cores\tiny/main.cpp:3 (discriminator 1)
+#include <Arduino.h>
+
+int main(void)
+ f46:	fe cf       	rjmp	.-4      	; 0xf44 <main+0x8>
+
+00000f48 <__mulhi3>:
+__mulhi3():
+ f48:	00 24       	eor	r0, r0
+ f4a:	55 27       	eor	r21, r21
+ f4c:	04 c0       	rjmp	.+8      	; 0xf56 <__mulhi3+0xe>
+ f4e:	08 0e       	add	r0, r24
+ f50:	59 1f       	adc	r21, r25
+ f52:	88 0f       	add	r24, r24
+ f54:	99 1f       	adc	r25, r25
+ f56:	00 97       	sbiw	r24, 0x00	; 0
+ f58:	29 f0       	breq	.+10     	; 0xf64 <__mulhi3+0x1c>
+ f5a:	76 95       	lsr	r23
+ f5c:	67 95       	ror	r22
+ f5e:	b8 f3       	brcs	.-18     	; 0xf4e <__mulhi3+0x6>
+ f60:	71 05       	cpc	r23, r1
+ f62:	b9 f7       	brne	.-18     	; 0xf52 <__mulhi3+0xa>
+ f64:	80 2d       	mov	r24, r0
+ f66:	95 2f       	mov	r25, r21
+ f68:	08 95       	ret
+
+00000f6a <__tablejump2__>:
+__tablejump2__():
+ f6a:	ee 0f       	add	r30, r30
+ f6c:	ff 1f       	adc	r31, r31
+ f6e:	05 90       	lpm	r0, Z+
+ f70:	f4 91       	lpm	r31, Z
+ f72:	e0 2d       	mov	r30, r0
+ f74:	09 94       	ijmp
+
+00000f76 <eeprom_read_byte>:
+eeprom_read_byte():
+ f76:	e1 99       	sbic	0x1c, 1	; 28
+ f78:	fe cf       	rjmp	.-4      	; 0xf76 <eeprom_read_byte>
+ f7a:	9f bb       	out	0x1f, r25	; 31
+ f7c:	8e bb       	out	0x1e, r24	; 30
+ f7e:	e0 9a       	sbi	0x1c, 0	; 28
+ f80:	99 27       	eor	r25, r25
+ f82:	8d b3       	in	r24, 0x1d	; 29
+ f84:	08 95       	ret
+
+00000f86 <eeprom_write_byte>:
+eeprom_write_byte():
+ f86:	26 2f       	mov	r18, r22
+
+00000f88 <eeprom_write_r18>:
+ f88:	e1 99       	sbic	0x1c, 1	; 28
+ f8a:	fe cf       	rjmp	.-4      	; 0xf88 <eeprom_write_r18>
+ f8c:	1c ba       	out	0x1c, r1	; 28
+ f8e:	9f bb       	out	0x1f, r25	; 31
+ f90:	8e bb       	out	0x1e, r24	; 30
+ f92:	2d bb       	out	0x1d, r18	; 29
+ f94:	0f b6       	in	r0, 0x3f	; 63
+ f96:	f8 94       	cli
+ f98:	e2 9a       	sbi	0x1c, 2	; 28
+ f9a:	e1 9a       	sbi	0x1c, 1	; 28
+ f9c:	0f be       	out	0x3f, r0	; 63
+ f9e:	01 96       	adiw	r24, 0x01	; 1
+ fa0:	08 95       	ret
+
+00000fa2 <_exit>:
+exit():
+ fa2:	f8 94       	cli
+
+00000fa4 <__stop_program>:
+__stop_program():
+ fa4:	ff cf       	rjmp	.-2      	; 0xfa4 <__stop_program>
