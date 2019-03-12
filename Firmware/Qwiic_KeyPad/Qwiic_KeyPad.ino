@@ -76,6 +76,54 @@ byte rowPins[ROWS] = {10, 5, 3, 1};
 byte colPins[COLS] = {8, 2, 0};
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 
+//Global variables
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//Variables used in the I2C interrupt so we use volatile
+
+//This is the pseudo register map of the product. If user asks for 0x02 then get the 3rd
+//byte inside the register map.
+//5602/118 on ATtiny84 prior to conversion
+//Approximately 4276/156 on ATtiny84 after conversion
+struct memoryMap {
+  byte id;                    // Reg: 0x00 - Default I2C Address
+  byte firmwareMajor;         // Reg: 0x01 - Firmware Number
+  byte firmwareMinor;         // Reg: 0x02 - Firmware Number
+  byte fifo_button;         // Reg: 0x03 - oldest button (aka the "first" button pressed)
+  byte fifo_timeSincePressed_MSB;  // Reg: 0x04 - time in milliseconds since the buttonEvent occured (MSB)
+  byte fifo_timeSincePressed_LSB;  // Reg: 0x05 - time in milliseconds since the buttonEvent occured (LSB)
+  byte i2cAddress;            // Reg: 0x0A - Set I2C New Address (re-writable). Clears i2cLock.
+};
+
+//These are the default values for all settings
+volatile memoryMap registerMap = {
+  .id = I2C_ADDRESS_DEFAULT, //Default I2C Address (0x20)
+  .firmwareMajor = 0x02, //Firmware version. Helpful for tech support.
+  .firmwareMinor = 0x04,
+  .fifo_button = 0,
+  .fifo_timeSincePressed_MSB = 0,
+  .fifo_timeSincePressed_LSB = 0,
+  .i2cAddress = I2C_ADDRESS_DEFAULT,
+};
+
+//This defines which of the registers are read-only (0) vs read-write (1)
+memoryMap protectionMap = {
+  .id = 0x00,
+  .firmwareMajor = 0x00,
+  .firmwareMinor = 0x00,
+  .fifo_button = 0x00,
+  .fifo_timeSincePressed_MSB = 0x00,
+  .fifo_timeSincePressed_LSB = 0x00,
+  .i2cAddress = 0xFF,
+};
+
+//Cast 32bit address of the object registerMap with uint8_t so we can increment the pointer
+uint8_t *registerPointer = (uint8_t *)&registerMap;
+uint8_t *protectionPointer = (uint8_t *)&protectionMap;
+
+volatile byte registerNumber; //Gets set when user writes an address. We then serve the spot the user requested.
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 void setup(void)
 {
   pinMode(addr, INPUT_PULLUP);
@@ -103,9 +151,17 @@ void loop(void)
   //Check for new key presses
   char key = keypad.getKey();
   if (key) {
+    //Check for buffer overrun
+    // if oldest press is trailing just one behind, then we also will need to increment
+    if (oldestPress == (newestPress + 1)) oldestPress++;
+    if ( (newestPress == (BUTTON_STACK_SIZE - 1)) && (oldestPress == 0) ) oldestPress++;
+    if (oldestPress == BUTTON_STACK_SIZE) oldestPress = 0; //still need to wrap if it happens
+
+    newestPress++;
+    if (newestPress == BUTTON_STACK_SIZE) newestPress = 0; //Wrap variable
+
     buttonEvents[newestPress].button = key;
     buttonEvents[newestPress].buttonTime = millis();
-    if (newestPress++ == BUTTON_STACK_SIZE) newestPress = 0; //Wrap variable
   }
 
   //Set interrupt pin as needed
@@ -163,13 +219,15 @@ void loadNextPressToArray()
 {
   if (oldestPress != newestPress)
   {
+    oldestPress++;
+    if (oldestPress == BUTTON_STACK_SIZE) oldestPress = 0;
+    
     responseBuffer[0] = buttonEvents[oldestPress].button;
 
     unsigned long timeSincePressed = millis() - buttonEvents[oldestPress].buttonTime;
 
     responseBuffer[1] = timeSincePressed >> 8; //MSB
     responseBuffer[2] = timeSincePressed; //LSB
-    if (oldestPress++ == BUTTON_STACK_SIZE) oldestPress = 0;
   }
   else
   {
