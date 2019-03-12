@@ -5,7 +5,7 @@
   Date: January 21st, 2018
   License: This code is public domain but you buy me a beer if you use this and we meet someday (Beerware license).
 
-  Qwiic KeyPad is an I2C based key pad that records any button presses to a stack. If quered by the 
+  Qwiic KeyPad is an I2C based key pad that records any button presses to a stack. If quered by the
   master KeyPad will respond with the oldest button pressed along with the time since it was pressed.
 
   For example, if you Wire.request(75, 3) you'll get three bytes from KeyPad and they might read:
@@ -131,7 +131,7 @@ void setup(void)
 
   //Disable ADC
   ADCSRA = 0;
-  
+
   //Disble Brown-Out Detect
   MCUCR = bit (BODS) | bit (BODSE);
   MCUCR = bit (BODS);
@@ -165,7 +165,7 @@ void loop(void)
   }
 
   //Set interrupt pin as needed
-  if(newestPress != oldestPress)
+  if (newestPress != oldestPress)
     digitalWrite(interruptPin, LOW); //We have events on the stack!
   else
     digitalWrite(interruptPin, HIGH); //No button events to report
@@ -221,7 +221,7 @@ void loadNextPressToArray()
   {
     oldestPress++;
     if (oldestPress == BUTTON_STACK_SIZE) oldestPress = 0;
-    
+
     responseBuffer[0] = buttonEvents[oldestPress].button;
 
     unsigned long timeSincePressed = millis() - buttonEvents[oldestPress].buttonTime;
@@ -257,7 +257,7 @@ void readSystemSettings(void)
 void startI2C()
 {
   Wire.end(); //Before we can change addresses we need to stop
-  
+
   if (digitalRead(addr) == HIGH) //Default is HIGH, the jumper is open
     Wire.begin(setting_i2c_address); //Start I2C and answer calls using address from EEPROM
   else
