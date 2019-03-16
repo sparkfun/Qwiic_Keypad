@@ -69,11 +69,25 @@ char keys[ROWS][COLS] = {
   {'3', '1', '2'}
 };
 
+
+#if defined(__AVR_ATmega328P__)
+//Hardware connections while developing with an Uno
+//Note, could not use pins 0 and 1 on uno, due to conflicting RX/TX debug
+//Pin X on keypad is connected to Y:
+//KeyPad               7, 6, 4, 2
+byte rowPins[ROWS] = {10, 5, 3, 6};
+//Keypad              5, 3, 1
+byte colPins[COLS] = {8, 2, 4};
+
+#elif defined(__AVR_ATtiny85__)
+//Hardware connections for the final design
 //Pin X on keypad is connected to Y:
 //KeyPad               7, 6, 4, 2
 byte rowPins[ROWS] = {10, 5, 3, 1};
 //Keypad              5, 3, 1
 byte colPins[COLS] = {8, 2, 0};
+
+#endif
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 
 //Global variables
@@ -91,17 +105,19 @@ struct memoryMap {
   byte fifo_button;         // Reg: 0x03 - oldest button (aka the "first" button pressed)
   byte fifo_timeSincePressed_MSB;  // Reg: 0x04 - time in milliseconds since the buttonEvent occured (MSB)
   byte fifo_timeSincePressed_LSB;  // Reg: 0x05 - time in milliseconds since the buttonEvent occured (LSB)
-  byte i2cAddress;            // Reg: 0x0A - Set I2C New Address (re-writable). Clears i2cLock.
+  byte updateFIFO;            // Reg: 0x06 - "command" from master, set bit0 to command fifo increment
+  byte i2cAddress;            // Reg: 0x07 - Set I2C New Address (re-writable).
 };
 
 //These are the default values for all settings
 volatile memoryMap registerMap = {
   .id = I2C_ADDRESS_DEFAULT, //Default I2C Address (0x20)
-  .firmwareMajor = 0x02, //Firmware version. Helpful for tech support.
-  .firmwareMinor = 0x04,
+  .firmwareMajor = 0x01, //Firmware version. Helpful for tech support.
+  .firmwareMinor = 0x00,
   .fifo_button = 0,
   .fifo_timeSincePressed_MSB = 0,
   .fifo_timeSincePressed_LSB = 0,
+  .updateFIFO = 0,
   .i2cAddress = I2C_ADDRESS_DEFAULT,
 };
 
@@ -113,6 +129,7 @@ memoryMap protectionMap = {
   .fifo_button = 0x00,
   .fifo_timeSincePressed_MSB = 0x00,
   .fifo_timeSincePressed_LSB = 0x00,
+  .updateFIFO = 0x01, // allow read-write on bit0 to "command" fifo increment update
   .i2cAddress = 0xFF,
 };
 
@@ -144,6 +161,16 @@ void setup(void)
   readSystemSettings(); //Load all system settings from EEPROM
 
   startI2C(); //Determine the I2C address we should be using and begin listening on I2C bus
+
+#if defined(__AVR_ATmega328P__)
+  Serial.begin(9600);
+  Serial.println("Qwiic Keypad");
+  Serial.print("Address: 0x");
+  Serial.print(registerMap.i2cAddress, HEX);
+  Serial.println();
+  print_registerMap();
+#endif
+
 }
 
 void loop(void)
@@ -162,6 +189,11 @@ void loop(void)
 
     buttonEvents[newestPress].button = key;
     buttonEvents[newestPress].buttonTime = millis();
+
+#if defined(__AVR_ATmega328P__)
+    Serial.print(char(buttonEvents[newestPress].button));
+    print_registerMap();
+#endif
   }
 
   //Set interrupt pin as needed
@@ -173,32 +205,30 @@ void loop(void)
   sleep_mode(); //Stop everything and go to sleep. Wake up if I2C event occurs.
 }
 
-//When KeyPad receives data bytes, this function is called as an interrupt
-//The only valid command we can receive from the master is the change I2C adddress command
+//When Qwiic Keypad receives data bytes from Master, this function is called as an interrupt
+//(Serves rewritable I2C address)
 void receiveEvent(int numberOfBytesReceived)
 {
-  while (Wire.available())
+  registerNumber = Wire.read(); //Get the memory map offset from the user
+
+  
+
+  //Begin recording the following incoming bytes to the temp memory map
+  //starting at the registerNumber (the first byte received)
+  for (byte x = 0 ; x < numberOfBytesReceived - 1 ; x++)
   {
-    //Record bytes to local array
-    byte incoming = Wire.read();
+    byte temp = Wire.read(); //We might record it, we might throw it away
 
-    if (incoming == COMMAND_CHANGE_ADDRESS) //Set new I2C address
+    if ( (x + registerNumber) < sizeof(memoryMap))
     {
-      if (Wire.available())
-      {
-        setting_i2c_address = Wire.read();
-
-        //Error check
-        if (setting_i2c_address < 0x08 || setting_i2c_address > 0x77)
-          continue; //Command failed. This address is out of bounds.
-
-        EEPROM.write(LOCATION_I2C_ADDRESS, setting_i2c_address);
-
-        //Our I2C address may have changed because of user's command
-        startI2C(); //Determine the I2C address we should be using and begin listening on I2C bus
-      }
+      //Clense the incoming byte against the read only protected bits
+      //Store the result into the register map
+      *(registerPointer + registerNumber + x) &= ~*(protectionPointer + registerNumber + x); //Clear this register if needed
+      *(registerPointer + registerNumber + x) |= temp & *(protectionPointer + registerNumber + x); //Or in the user's request (clensed against protection bits)
     }
   }
+
+  recordSystemSettings();
 }
 
 //Send back a number of bytes via an array, max 32 bytes
@@ -210,8 +240,10 @@ void requestEvent()
   loadNextPressToArray();
 
   //Send response buffer
-  for (byte x = 0 ; x < responseSize ; x++)
-    Wire.write(responseBuffer[x]);
+//  for (byte x = 0 ; x < responseSize ; x++)
+//    Wire.write(responseBuffer[x]);
+
+  Wire.write((registerPointer + registerNumber), sizeof(memoryMap) - registerNumber);
 }
 
 //Take the FIFO button press off the stack and load it into the transmit array
@@ -266,4 +298,40 @@ void startI2C()
   //The connections to the interrupts are severed when a Wire.begin occurs. So re-declare them.
   Wire.onReceive(receiveEvent);
   Wire.onRequest(requestEvent);
+}
+
+#if defined(__AVR_ATmega328P__)
+void print_registerMap()
+{
+  Serial.println("registerMap contents:");
+  for (byte i = 0 ; i < sizeof(memoryMap) ; i++)
+  {
+    Serial.println(*(registerPointer + i));
+  }
+}
+#endif
+
+//If the current setting is different from that in EEPROM, update EEPROM
+void recordSystemSettings(void)
+{
+  //I2C address is byte
+  byte i2cAddr;
+
+  //Error check the current I2C address
+  if (registerMap.i2cAddress < 0x08 || registerMap.i2cAddress > 0x77)
+  {
+    //User has set the address out of range
+    //Go back to defaults
+    registerMap.i2cAddress = I2C_ADDRESS_DEFAULT;
+  }
+
+  //Read the value currently in EEPROM. If it's different from the memory map then record the memory map value to EEPROM.
+  EEPROM.get(LOCATION_I2C_ADDRESS, i2cAddr);
+  if (i2cAddr != registerMap.i2cAddress)
+  {    
+    EEPROM.write(LOCATION_I2C_ADDRESS, registerMap.i2cAddress);
+    startI2C(); //Determine the I2C address we should be using and begin listening on I2C bus
+    //Serial.print("New Address: 0x");
+    //Serial.println(registerMap.i2cAddress, HEX);
+  }
 }
