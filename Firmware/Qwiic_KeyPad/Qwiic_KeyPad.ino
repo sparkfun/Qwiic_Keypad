@@ -163,7 +163,7 @@ void setup(void)
   startI2C(); //Determine the I2C address we should be using and begin listening on I2C bus
 
 #if defined(__AVR_ATmega328P__)
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.println("Qwiic Keypad");
   Serial.print("Address: 0x");
   Serial.print(registerMap.i2cAddress, HEX);
@@ -193,6 +193,7 @@ void loop(void)
 #if defined(__AVR_ATmega328P__)
     Serial.print(char(buttonEvents[newestPress].button));
     print_registerMap();
+    print_buttonEvents();
 #endif
   }
 
@@ -206,7 +207,7 @@ void loop(void)
 }
 
 //When Qwiic Keypad receives data bytes from Master, this function is called as an interrupt
-//(Serves rewritable I2C address)
+//(Serves rewritable I2C address and updateFifo command)
 void receiveEvent(int numberOfBytesReceived)
 {
   registerNumber = Wire.read(); //Get the memory map offset from the user
@@ -237,7 +238,20 @@ void receiveEvent(int numberOfBytesReceived)
 //The user sets the response type based on bytes sent to KeyPad
 void requestEvent()
 {
-  loadNextPressToArray();
+
+  if(registerMap.updateFIFO & (1 << 0))
+  {
+    // clear command bit
+    registerMap.updateFIFO &= ~(1 << 0);
+    
+    // update fifo, that is... copy oldest button (and buttonTime) into fifo register (ready for reading)
+    loadFifoRegister();
+  }
+
+#if defined(__AVR_ATmega328P__)
+    print_registerMap();
+    print_buttonEvents();
+#endif  
 
   //Send response buffer
 //  for (byte x = 0 ; x < responseSize ; x++)
@@ -246,8 +260,8 @@ void requestEvent()
   Wire.write((registerPointer + registerNumber), sizeof(memoryMap) - registerNumber);
 }
 
-//Take the FIFO button press off the stack and load it into the transmit array
-void loadNextPressToArray()
+//Take the FIFO button press off the stack and load it into the fifo register (ready for reading)
+void loadFifoRegister()
 {
   if (oldestPress != newestPress)
   {
@@ -255,18 +269,24 @@ void loadNextPressToArray()
     if (oldestPress == BUTTON_STACK_SIZE) oldestPress = 0;
 
     responseBuffer[0] = buttonEvents[oldestPress].button;
+    registerMap.fifo_button = buttonEvents[oldestPress].button;
 
     unsigned long timeSincePressed = millis() - buttonEvents[oldestPress].buttonTime;
 
     responseBuffer[1] = timeSincePressed >> 8; //MSB
+    registerMap.fifo_timeSincePressed_MSB = (timeSincePressed >> 8);
     responseBuffer[2] = timeSincePressed; //LSB
+    registerMap.fifo_timeSincePressed_LSB = timeSincePressed;
   }
   else
   {
-    //No new button presses. Respond with a blank record
+    //No new button presses. load blank records
     responseBuffer[0] = 0; //No button pressed
+    registerMap.fifo_button = 0;
     responseBuffer[1] = 0;
+    registerMap.fifo_timeSincePressed_MSB = 0;
     responseBuffer[2] = 0;
+    registerMap.fifo_timeSincePressed_LSB = 0;
   }
 
   responseSize = 3;
@@ -308,6 +328,20 @@ void print_registerMap()
   {
     Serial.println(*(registerPointer + i));
   }
+}
+
+void print_buttonEvents()
+{
+  Serial.println("buttonEvents[] contents: button, buttonTime");
+  for (byte i = 0 ; i < BUTTON_STACK_SIZE ; i++)
+  {
+    Serial.print("[");
+    Serial.print(i);
+    Serial.print("]:");
+    Serial.print(char(buttonEvents[i].button));
+    Serial.print(", ");
+    Serial.println(buttonEvents[i].buttonTime);
+  }  
 }
 #endif
 
