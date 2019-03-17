@@ -4,16 +4,16 @@
   SparkFun Electronics
   Date: January 21st, 2018
   License: This code is public domain but you buy me a beer if you use this and we meet someday (Beerware license).
+  
+  Updated by: Pete Lewis
+  SparkFun Electronics
+  Date: March 16th, 2019
+  
+  Qwiic KeyPad is an I2C based key pad that records any button presses to a stack. To read buttons off the
+  stack, the master must first command the keypad to load the fifo register, then read the fifo register.
 
-  Qwiic KeyPad is an I2C based key pad that records any button presses to a stack. If quered by the
-  master KeyPad will respond with the oldest button pressed along with the time since it was pressed.
-
-  For example, if you Wire.request(75, 3) you'll get three bytes from KeyPad and they might read:
-  byte 0: 0x34 - ASCII '4', button four was pressed
-  byte 1: 0x01 - The MSB of a 16-bit unsigned integer
-  byte 2: 0x5A - The LSB of a 16-bit unsigned integer
-
-  0x015A = 346 so button 4 was pressed 346 milliseconds ago
+  There is also an accompanying Arduino Library located here:
+  https://github.com/sparkfun/SparkFun_Qwiic_Keypad_Arduino_Library
 
   Feel like supporting our work? Buy a board from SparkFun!
   https://www.sparkfun.com/products/14641
@@ -39,13 +39,8 @@
 #define I2C_ADDRESS_DEFAULT 75
 #define I2C_ADDRESS_JUMPER 74
 
-#define COMMAND_CHANGE_ADDRESS 0xC7
-
 //Variables used in the I2C interrupt so we use volatile
 volatile byte setting_i2c_address = I2C_ADDRESS_DEFAULT; //The 7-bit I2C address of this KeyPad
-
-byte responseBuffer[3]; //Used to pass data back to master
-volatile byte responseSize = 1; //Defines how many bytes of relevant data is contained in the responseBuffer
 
 //This struc keeps a record of all the button presses
 #define BUTTON_STACK_SIZE 15
@@ -212,8 +207,6 @@ void receiveEvent(int numberOfBytesReceived)
 {
   registerNumber = Wire.read(); //Get the memory map offset from the user
 
-  
-
   //Begin recording the following incoming bytes to the temp memory map
   //starting at the registerNumber (the first byte received)
   for (byte x = 0 ; x < numberOfBytesReceived - 1 ; x++)
@@ -238,7 +231,6 @@ void receiveEvent(int numberOfBytesReceived)
 //The user sets the response type based on bytes sent to KeyPad
 void requestEvent()
 {
-
   if(registerMap.updateFIFO & (1 << 0))
   {
     // clear command bit
@@ -253,10 +245,6 @@ void requestEvent()
     print_buttonEvents();
 #endif  
 
-  //Send response buffer
-//  for (byte x = 0 ; x < responseSize ; x++)
-//    Wire.write(responseBuffer[x]);
-
   Wire.write((registerPointer + registerNumber), sizeof(memoryMap) - registerNumber);
 }
 
@@ -268,28 +256,20 @@ void loadFifoRegister()
     oldestPress++;
     if (oldestPress == BUTTON_STACK_SIZE) oldestPress = 0;
 
-    responseBuffer[0] = buttonEvents[oldestPress].button;
     registerMap.fifo_button = buttonEvents[oldestPress].button;
 
     unsigned long timeSincePressed = millis() - buttonEvents[oldestPress].buttonTime;
 
-    responseBuffer[1] = timeSincePressed >> 8; //MSB
     registerMap.fifo_timeSincePressed_MSB = (timeSincePressed >> 8);
-    responseBuffer[2] = timeSincePressed; //LSB
     registerMap.fifo_timeSincePressed_LSB = timeSincePressed;
   }
   else
   {
     //No new button presses. load blank records
-    responseBuffer[0] = 0; //No button pressed
     registerMap.fifo_button = 0;
-    responseBuffer[1] = 0;
     registerMap.fifo_timeSincePressed_MSB = 0;
-    responseBuffer[2] = 0;
     registerMap.fifo_timeSincePressed_LSB = 0;
   }
-
-  responseSize = 3;
 }
 
 //Reads the current system settings from EEPROM
