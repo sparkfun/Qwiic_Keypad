@@ -39,9 +39,6 @@
 #define I2C_ADDRESS_DEFAULT 75
 #define I2C_ADDRESS_JUMPER 74
 
-//Variables used in the I2C interrupt so we use volatile
-volatile byte setting_i2c_address = I2C_ADDRESS_DEFAULT; //The 7-bit I2C address of this KeyPad
-
 //This struc keeps a record of all the button presses
 #define BUTTON_STACK_SIZE 15
 struct {
@@ -163,6 +160,9 @@ void setup(void)
   Serial.print("Address: 0x");
   Serial.print(registerMap.i2cAddress, HEX);
   Serial.println();
+  Serial.print("EEPROM READ I2C Address:");
+  Serial.print(EEPROM.read(LOCATION_I2C_ADDRESS), HEX);
+  Serial.println();  
   print_registerMap();
 #endif
 
@@ -277,21 +277,21 @@ void loadFifoRegister()
 void readSystemSettings(void)
 {
   //Read what I2C address we should use
-  setting_i2c_address = EEPROM.read(LOCATION_I2C_ADDRESS);
-  if (setting_i2c_address == 255)
+  registerMap.i2cAddress = EEPROM.read(LOCATION_I2C_ADDRESS);
+  if (registerMap.i2cAddress == 255)
   {
-    setting_i2c_address = I2C_ADDRESS_DEFAULT; //By default, we listen for I2C_ADDRESS_DEFAULT
-    EEPROM.write(LOCATION_I2C_ADDRESS, setting_i2c_address);
+    registerMap.i2cAddress = I2C_ADDRESS_DEFAULT; //By default, we listen for I2C_ADDRESS_DEFAULT
+    EEPROM.write(LOCATION_I2C_ADDRESS, registerMap.i2cAddress);
   }
 }
 
-//Begin listening on I2C bus as I2C slave using the global variable setting_i2c_address
+//Begin listening on I2C bus as I2C slave using the global variable registerMap.i2cAddress
 void startI2C()
 {
   Wire.end(); //Before we can change addresses we need to stop
 
   if (digitalRead(addr) == HIGH) //Default is HIGH, the jumper is open
-    Wire.begin(setting_i2c_address); //Start I2C and answer calls using address from EEPROM
+    Wire.begin(registerMap.i2cAddress); //Start I2C and answer calls using address from EEPROM
   else
     Wire.begin(I2C_ADDRESS_JUMPER); //Force address to I2C_ADDRESS_JUMPER if user has closed the solder jumper
 
