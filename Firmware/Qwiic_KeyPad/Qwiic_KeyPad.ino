@@ -71,7 +71,7 @@ byte rowPins[ROWS] = {10, 5, 3, 6};
 //Keypad              5, 3, 1
 byte colPins[COLS] = {8, 2, 4};
 
-#elif defined(__AVR_ATtiny85__)
+#elif defined(__AVR_ATtiny84__)
 //Hardware connections for the final design
 //Pin X on keypad is connected to Y:
 //KeyPad               7, 6, 4, 2
