@@ -4,11 +4,11 @@
   SparkFun Electronics
   Date: January 21st, 2018
   License: This code is public domain but you buy me a beer if you use this and we meet someday (Beerware license).
-  
+
   Updated by: Pete Lewis
   SparkFun Electronics
   Date: March 16th, 2019
-  
+
   Qwiic KeyPad is an I2C based key pad that records any button presses to a stack. To read buttons off the
   stack, the master must first command the keypad to load the fifo register, then read the fifo register.
 
@@ -162,7 +162,7 @@ void setup(void)
   Serial.println();
   Serial.print("EEPROM READ I2C Address:");
   Serial.print(EEPROM.read(LOCATION_I2C_ADDRESS), HEX);
-  Serial.println();  
+  Serial.println();
   print_registerMap();
 #endif
 
@@ -184,6 +184,10 @@ void loop(void)
 
     buttonEvents[newestPress].button = key;
     buttonEvents[newestPress].buttonTime = millis();
+
+    digitalWrite(interruptPin, HIGH); //Set Int HIGH, to cause a FALLING edge later
+    //Note, this will be set LOW again at bottom of main loop.
+    //This FALLING edge is useful for hardware INT on your project's master IC.
 
 #if defined(__AVR_ATmega328P__)
     Serial.print(char(buttonEvents[newestPress].button));
@@ -231,19 +235,19 @@ void receiveEvent(int numberOfBytesReceived)
 //The user sets the response type based on bytes sent to KeyPad
 void requestEvent()
 {
-  if(registerMap.updateFIFO & (1 << 0))
+  if (registerMap.updateFIFO & (1 << 0))
   {
     // clear command bit
     registerMap.updateFIFO &= ~(1 << 0);
-    
+
     // update fifo, that is... copy oldest button (and buttonTime) into fifo register (ready for reading)
     loadFifoRegister();
   }
 
 #if defined(__AVR_ATmega328P__)
-    print_registerMap();
-    print_buttonEvents();
-#endif  
+  print_registerMap();
+  print_buttonEvents();
+#endif
 
   Wire.write((registerPointer + registerNumber), sizeof(memoryMap) - registerNumber);
 }
@@ -321,7 +325,7 @@ void print_buttonEvents()
     Serial.print(char(buttonEvents[i].button));
     Serial.print(", ");
     Serial.println(buttonEvents[i].buttonTime);
-  }  
+  }
 }
 #endif
 
@@ -342,7 +346,7 @@ void recordSystemSettings(void)
   //Read the value currently in EEPROM. If it's different from the memory map then record the memory map value to EEPROM.
   EEPROM.get(LOCATION_I2C_ADDRESS, i2cAddr);
   if (i2cAddr != registerMap.i2cAddress)
-  {    
+  {
     EEPROM.write(LOCATION_I2C_ADDRESS, registerMap.i2cAddress);
     startI2C(); //Determine the I2C address we should be using and begin listening on I2C bus
     //Serial.print("New Address: 0x");
