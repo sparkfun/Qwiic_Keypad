@@ -52,6 +52,8 @@ const byte addr = 9; //Addr jumper
 const byte interruptPin = 7; //Pin goes low when a button event is available
 
 #include <Keypad.h>   // by Mark Stanley and Alexander Brevig 
+                      // Click here to get the library: http://librarymanager/All#Keypad_matrix_style
+                      // Note, if the search above doesn't work, try just "keypad" and find the correct one.
 const byte ROWS = 4;
 const byte COLS = 3;
 char keys[ROWS][COLS] = {
