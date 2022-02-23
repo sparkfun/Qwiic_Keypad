@@ -211,24 +211,27 @@ void loop(void)
 //(Serves rewritable I2C address and updateFifo command)
 void receiveEvent(int numberOfBytesReceived)
 {
-  registerNumber = Wire.read(); //Get the memory map offset from the user
-
-  //Begin recording the following incoming bytes to the temp memory map
-  //starting at the registerNumber (the first byte received)
-  for (byte x = 0 ; x < numberOfBytesReceived - 1 ; x++)
+  if(numberOfBytesReceived > 0) // ensure we received valid byte or bytes - note, an I2C scan does not send anything, so without this, it would overright registerNumber with Zero.
   {
-    byte temp = Wire.read(); //We might record it, we might throw it away
+    registerNumber = Wire.read(); //Get the memory map offset from the user
 
-    if ( (x + registerNumber) < sizeof(memoryMap))
+    //Begin recording the following incoming bytes to the temp memory map
+    //starting at the registerNumber (the first byte received)
+    for (byte x = 0 ; x < numberOfBytesReceived - 1 ; x++)
     {
-      //Clense the incoming byte against the read only protected bits
-      //Store the result into the register map
-      *(registerPointer + registerNumber + x) &= ~*(protectionPointer + registerNumber + x); //Clear this register if needed
-      *(registerPointer + registerNumber + x) |= temp & *(protectionPointer + registerNumber + x); //Or in the user's request (clensed against protection bits)
-    }
-  }
+      byte temp = Wire.read(); //We might record it, we might throw it away
 
-  recordSystemSettings();
+      if ( (x + registerNumber) < sizeof(memoryMap))
+      {
+        //Clense the incoming byte against the read only protected bits
+        //Store the result into the register map
+        *(registerPointer + registerNumber + x) &= ~*(protectionPointer + registerNumber + x); //Clear this register if needed
+        *(registerPointer + registerNumber + x) |= temp & *(protectionPointer + registerNumber + x); //Or in the user's request (clensed against protection bits)
+      }
+    }
+
+    recordSystemSettings();
+  }
 }
 
 //Send back a number of bytes via an array, max 32 bytes
