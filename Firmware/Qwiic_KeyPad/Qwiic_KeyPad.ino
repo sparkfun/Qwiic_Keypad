@@ -211,6 +211,8 @@ void loop(void)
 //(Serves rewritable I2C address and updateFifo command)
 void receiveEvent(int numberOfBytesReceived)
 {
+  if(numberOfBytesReceived > 0) // ensure we received valid byte or bytes - note, an I2C scan does not send anything, so without this, it would overright registerNumber with Zero.
+  {
   registerNumber = Wire.read(); //Get the memory map offset from the user
 
   //Begin recording the following incoming bytes to the temp memory map
@@ -229,6 +231,7 @@ void receiveEvent(int numberOfBytesReceived)
   }
 
   recordSystemSettings();
+  }
 }
 
 //Send back a number of bytes via an array, max 32 bytes
