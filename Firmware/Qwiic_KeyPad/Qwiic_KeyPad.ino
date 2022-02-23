@@ -213,24 +213,24 @@ void receiveEvent(int numberOfBytesReceived)
 {
   if(numberOfBytesReceived > 0) // ensure we received valid byte or bytes - note, an I2C scan does not send anything, so without this, it would overright registerNumber with Zero.
   {
-  registerNumber = Wire.read(); //Get the memory map offset from the user
+    registerNumber = Wire.read(); //Get the memory map offset from the user
 
-  //Begin recording the following incoming bytes to the temp memory map
-  //starting at the registerNumber (the first byte received)
-  for (byte x = 0 ; x < numberOfBytesReceived - 1 ; x++)
-  {
-    byte temp = Wire.read(); //We might record it, we might throw it away
-
-    if ( (x + registerNumber) < sizeof(memoryMap))
+    //Begin recording the following incoming bytes to the temp memory map
+    //starting at the registerNumber (the first byte received)
+    for (byte x = 0 ; x < numberOfBytesReceived - 1 ; x++)
     {
-      //Clense the incoming byte against the read only protected bits
-      //Store the result into the register map
-      *(registerPointer + registerNumber + x) &= ~*(protectionPointer + registerNumber + x); //Clear this register if needed
-      *(registerPointer + registerNumber + x) |= temp & *(protectionPointer + registerNumber + x); //Or in the user's request (clensed against protection bits)
-    }
-  }
+      byte temp = Wire.read(); //We might record it, we might throw it away
 
-  recordSystemSettings();
+      if ( (x + registerNumber) < sizeof(memoryMap))
+      {
+        //Clense the incoming byte against the read only protected bits
+        //Store the result into the register map
+        *(registerPointer + registerNumber + x) &= ~*(protectionPointer + registerNumber + x); //Clear this register if needed
+        *(registerPointer + registerNumber + x) |= temp & *(protectionPointer + registerNumber + x); //Or in the user's request (clensed against protection bits)
+      }
+    }
+
+    recordSystemSettings();
   }
 }
 
